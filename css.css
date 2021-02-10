@@ -37,7 +37,12 @@ body{
 	display: none;
 
 }
-
+.k{
+	margin:2px 20px;
+}
+.e{
+	margin:2px 20px;
+}
 @media screen and (max-width: 700px) {
 	.buttons {
 		display: block;
