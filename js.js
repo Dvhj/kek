@@ -3,6 +3,7 @@ let area = document.querySelector('.area')
 
 let base = ['a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a'];
 let number;
+let index;
 
 let min = 0;
 let max = 0;
