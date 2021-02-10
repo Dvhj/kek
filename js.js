@@ -1,5 +1,7 @@
 let blocks = document.querySelectorAll('.block');
-let area = document.querySelector('.area')
+let area = document.querySelector('.area');
+let k_but = document.querySelector('.k');
+let e_but = document.querySelector('.e');
 
 let base = ['a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a'];
 let number;
@@ -32,15 +34,28 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
+k_but.addEventListener('click', function(){
+    number = '1';
+    index = "K";
+    area.innerHTML= "выбрана Z";
+});
+
+e_but.addEventListener('click', function(){
+    number = '0';
+    index = "E";
+    area.innerHTML= "выбрана Q";
+});  
 
 blocks.forEach(function(item){
       item.addEventListener('click', function () {
               base[item.id-1] = number;
-              item.innerHTML = index;
               if (number == 1){
+                item.innerHTML = index;
                 item.style.backgroundColor="red"
               }
-                else{item.style.backgroundColor="blue"};
+                else if (number == 0)
+                  {item.innerHTML = index;
+                    item.style.backgroundColor="blue"};
               console.log(base);
               let sum = base[0]+base[1]+base[2];
               let sum2 = base[1]+base[2]+base[3];
@@ -105,8 +120,9 @@ blocks.forEach(function(item){
                 sumd9 == "101" || sumd10 == "101" || sumd11== "101" || sumd12 == "101" || 
                 sumd13== "101" || sumd14 == "101" || sumd15== "101" || sumd16 == "101" || sumd17 == "101"
                 ){
-                area.innerHTML= "победа КЕК                           игра обновится через пару сек";
-                setTimeout(end, 3000);
+                item.style.backgroundColor="yellow";
+                area.innerHTML= "победа КЕК                           игра обновится через 5 сек";
+                setTimeout(end, 5000);
                 }
                  else if (sum == "010" || sum2 == "010"   || sum3 == "010"  || sum4 == "010"   || 
                 sum5== "010"  || sum6 == "010"  || sum7 == "010" || sum8 == "010"  || sum9 == "010"  ||
@@ -119,8 +135,8 @@ blocks.forEach(function(item){
                 sumd9 == "010" || sumd10 == "010"   || sumd11 == "010"  || sumd12 == "010"   || 
                 sumd13== "010"  || sumd14 == "010"  || sumd15 == "010" || sumd16 == "010"  || sumd17 == "010"   
                  ){
-               area.innerHTML= "победа ЕКЕ                            игра обновится через пару сек";
-                setTimeout(end, 3000);
+               area.innerHTML= "победа ЕКЕ                            игра обновится через 5 сек";
+                setTimeout(end, 5000);
               };
         });
 
