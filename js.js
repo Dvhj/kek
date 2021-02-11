@@ -24,15 +24,15 @@ function end () {
 
 
 document.addEventListener('keydown', function(event) {
-  if (event.code == 'KeyZ' ) {
+  if (event.code == 'KeyR' ) {
     number = '1';
     index = "K";
-    area.innerHTML= "выбрана Z";
+    area.innerHTML= "выбрана К";
   }
-  else if (event.code == 'KeyQ' ) {
+  else if (event.code == 'KeyT' ) {
     number = '0';
     index = "E";
-    area.innerHTML= "выбрана Q";
+    area.innerHTML= "выбрана Е";
   }
 });
 
