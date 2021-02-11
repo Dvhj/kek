@@ -117,6 +117,7 @@ blocks.forEach(function(item){
                      area.innerHTML= "ничья                         игра обновится через 5 сек";
                      setTimeout(end, 5000);
                } else if (data.includes('010')){
+		     item.style.backgroundColor="yellow";
                      area.innerHTML= "победа ЕКЕ                            игра обновится через 5 сек";
                      setTimeout(end, 5000);
                } else if ( data.includes('101')){
