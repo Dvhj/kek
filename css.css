@@ -27,7 +27,7 @@ body{
 
 .block:hover{
 	cursor: pointer;
-	background:#bdc6c7;
+	background-color:#bdc6c7;
 }
 
 .text{
