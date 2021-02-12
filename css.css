@@ -28,6 +28,10 @@ body{
 .block:hover{
 	cursor: pointer;
 }
+.block:active{
+	max-width: 80px;
+	max-height: 80px;
+}
 .text{
 	display: flex;
 	justify-content: center;
