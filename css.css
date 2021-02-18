@@ -1,0 +1,157 @@
+body{
+	padding-top: 2%;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	background:#e3f0cd;
+}
+.start {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1%;
+}
+.duo{
+	box-shadow:0 5px 5px gray;
+	cursor: pointer;
+}
+.bot{box-shadow:0 5px 5px gray;
+	cursor: pointer;
+	}
+.help {
+	padding-right: 0;
+	padding-left: 0;
+	background-color: #f7ffad;
+	border-radius: 3px;
+	box-shadow:0 5px 5px gray;
+	cursor: pointer;
+
+}
+.contain{
+	display: flex;
+	justify-content: center;
+}
+.box {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	max-width: 500px;
+	border:1px solid black;
+	border-radius: 4px;
+	background-color: #fff;
+}
+
+.block{
+	border:1px solid black;
+	min-width: 90px;
+	min-height: 90px;
+	font-size: 40px;
+	text-align: center;
+	border-radius: 4px;
+}
+
+.block:hover{
+	cursor: pointer;
+	background-color:#bdc6c7;
+}
+.text{
+	display: flex;
+	justify-content: center;
+	
+}
+
+.area {
+	font-size: 40px;
+	min-width: 500px;
+	max-width: 500px;
+	min-height: 150px;
+	border:1px solid black;
+	border-radius: 4px;
+	text-align: center;
+	margin-bottom: 1%;
+}
+
+.newGame{
+	display: flex;
+	justify-content: center;
+	margin-top: 1%;
+}
+
+.new{
+	font-size: 20px;
+	border:1px solid black;
+	border-radius: 4px;
+	max-width: 500px;
+	box-shadow:0 5px 5px gray;
+	cursor: pointer;
+}
+.buttons {
+	display: none;
+	justify-content: center;
+	margin-bottom: 1%;
+}
+
+.k{
+	padding:5px 20px;
+	min-width: 7%;
+	box-shadow:0 5px 5px gray;
+	cursor: pointer;
+}
+.e{
+	padding:5px 20px;
+	min-width: 7%;
+	box-shadow:0 5px 5px gray;
+	cursor: pointer;
+}
+.boxHelp{
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	position: absolute;
+	width:75%;
+	height: 70%;
+	background:#f0f8ff;
+	font-size: 35px;
+	border:1px solid black;
+	border-radius: 4px;
+}
+.boxHelp p {
+	margin: 2%;
+}
+.boxButHelp{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 1%;
+}
+.butHelp{
+	max-width: 400px;
+	box-shadow:0 5px 5px gray;
+}
+
+.shadow:active {
+	box-shadow:0 0 0 gray;
+}
+@media screen and (max-width: 700px) {
+
+	.block{
+		border:1px solid black;
+		min-width: 19%;
+		min-height: 60px;
+	}
+	.area {
+		min-width: 97%;
+		max-width: 98%;
+		font-size: 17px;
+		max-height: 10%;
+		min-height: 10%;
+	}
+	.box {
+		max-width: 98%;}
+	.text{
+		display: flex;
+		justify-content: center;
+	}
+	.boxHelp{
+		width:99%;
+		font-size: 25px;}
+
+}
