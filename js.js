@@ -1,16 +1,16 @@
 let blocks = document.querySelectorAll('.block');
 let area = document.querySelector('.area');
-let k_but = document.querySelector('.k');
-let e_but = document.querySelector('.e');
 let duo  = document.querySelector('.duo');
 let bot = document.querySelector('.bot');
 let help = document.querySelector('.help');
-let buttons =  document.querySelector('.buttons');
 let newGame = document.querySelector('.new');
 let boxHelp = document.querySelector('.boxHelp');
 let butHelp = document.querySelector('.butHelp');
 let box = document.querySelector('.box');
-
+let alone = document.querySelector('.forever_alone');
+let megusta = document.querySelector('.megusta');
+let poker = document.querySelector('.poker');
+let x = 0;
 let base = ['a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a'];
 let number = 1;
 let index;
@@ -20,6 +20,8 @@ let fact = true;
 let check = '';
 let checkWinBot = '';
 let numb = '';
+
+// НАПИСАТЬ КОД ДЛЯ ПОДВСЕТКИ ВЫИГРЫШНОЙ КОМБИНАЦИИ
 
 function dataF () {
                 data[0] = base[0]+base[1]+base[2];
@@ -37,7 +39,6 @@ function dataF () {
                 data[12] = base[20]+base[21]+base[22];
                 data[13] = base[21]+base[22]+base[23];
                 data[14] = base[22]+base[23]+base[24];
-
                 data[15] = base[0]+base[5]+base[10];
                 data[20] = base[5]+base[10]+base[15];
                 data[25] = base[10]+base[15]+base[20];
@@ -75,9 +76,12 @@ function dataF () {
 
 help.addEventListener('click', function(){
   boxHelp.style.display='flex'
+  boxHelp.style.zIndex = '5'
   newGame.style.display='none'
   box.style.display='none'
-
+  megusta.style.zIndex = '0'
+  poker.style.zIndex = '1'
+  alone.style.zIndex = '2'
 });
 
 butHelp.addEventListener('click', function(){
@@ -91,33 +95,22 @@ newGame.addEventListener('click', function(){
 });
 
 duo.addEventListener('click', function(){
-  buttons.style.display = 'flex';
-  area.innerHTML = "Выберите букву и сделайте ход "
+  area.innerHTML = "Выберите поле и сделайте ход (Ход буквы К)"
   duo.style.display = 'none';
   bot.style.display = 'none';
+  megusta.style.display = 'block';
+  poker.style.display = 'block';
+  duoGame();
 });
 
 bot.addEventListener('click', function(){
   area.innerHTML = "Выберите поле и сделайте ход "
-  buttons.style.display = 'none';
   duo.style.display = 'none';
   bot.style.display = 'none';
+  alone.style.display = 'block';
   botGame();
 });
 
-k_but.addEventListener('click', function(){
-    number = '1';
-    index = "K";
-    area.innerHTML= "Выбрана K";
-    duoGame();
-});
-
-e_but.addEventListener('click', function(){
-    number = '0';
-    index = "E";
-    area.innerHTML= "Выбрана E";
-    duoGame();
-});  
 
 let random = function rand(min, max) {
       min = Math.ceil(0)
@@ -223,12 +216,53 @@ function defETwo(){
     }
 }
 
+function kAk (){
+    dataF();   
+    if (data.includes('1a1') ) { 
+        numb = data.indexOf('1a1');
+      if (numb == '0' || numb == '1' || numb == '2' ){
+        checkWinBot = numb+1;}
+      if (numb == '3' || numb == '4' || numb == '5' ){
+        checkWinBot = numb+3;}
+      if (numb == '6' || numb == '7' || numb == '8' ){
+        checkWinBot = numb+5;}  
+      if (numb == '9' || numb == '10' || numb == '11' ){
+        checkWinBot = numb+7;}
+      if (numb == '12' || numb == '13' || numb == '14' ){
+        checkWinBot = numb +9;}
+      if ( numb == '15' || numb == '16' || numb == '17' ||
+          numb == '18' || numb == '19' || numb == '20'  ||
+          numb == '21' || numb == '22' || numb == '23'  ||
+          numb == '24' || numb == '25' || numb == '26'  ||
+          numb == '27' || numb == '28' || numb == '29' ) {
+          checkWinBot = numb -10;}
+      if (numb == '30' || numb == '31' || numb == '32' ||
+           numb == '35' || numb == '36' || numb == '37' ||  numb == '40' 
+          || numb == '41'  || numb == '42' ) {
+          checkWinBot = numb -24;}
+      if (numb == '33' || numb == '34' || numb == '38' ||
+           numb == '39' || numb == '43' || numb == '44' ) {
+          checkWinBot = numb -26;} 
+        if (numb == 45){
+          checkWinBot = numb -39;
+        }
+        if (numb == 46){
+          checkWinBot = numb -35;
+        }
+        if (numb == 47){
+          checkWinBot = numb -31;
+    }
+  }
+}
+
+
 function main() {
       if (fact == true) {
         console.log(base);
         area.innerHTML = "Ход компьютера... ";
         setTimeout( point, 500);
-        function point() {
+        function point(){
+          kAk();
           let x = random();
           console.log(x);
           if (data.includes('a01') && data.includes('a10')){
@@ -285,8 +319,8 @@ function main() {
               } else if (data.includes('010')){
                     blocks[checkWinBot].style.backgroundColor="#FFFF00";
                     area.innerHTML= "Победа Компьютера";}
-            } else if (base[x] == '1' || base[x] == '0'){
-            point();
+            }  else if (base[x] == '1' || base[x] == '0' || x == checkWinBot){
+                point();
             } else {
               blocks[x].style.backgroundColor="#87CEFA";
               blocks[x].innerHTML = 'E';
@@ -318,7 +352,8 @@ function botGame() {
               area.innerHTML= 'Выберите свободное поле'
               area.style.color = 'red';
             }
-             else { base[item.id-1] = '1';
+             else { area.style.color = 'black';
+                  base[item.id-1] = '1';
               if (number == 1){
                 item.innerHTML = 'K';
                 item.style.backgroundColor = "#FA8072"
@@ -346,27 +381,51 @@ function botGame() {
 function duoGame() {
     blocks.forEach(function(item){
           item.addEventListener('click', function () {
-                  base[item.id-1] = number;
-                  if (number == 1){
-                    item.innerHTML = index;
-                    item.style.backgroundColor="#FA8072"
-                    area.innerHTML= "Ход второго игрока...";
-                  }
-                    else if (number == 0)
-                      {item.innerHTML = index;
-                      item.style.backgroundColor="#87CEFA"
-                      area.innerHTML= "Ход первого игрока...";};
-                    dataF();    
-                   if (data.includes('010') &&  data.includes('101')) {
-                        item.style.backgroundColor="#FFFF00";
-                        area.innerHTML= "Ничья";
-                   } else if (data.includes('010')){
-                        item.style.backgroundColor="#FFFF00";
-                        area.innerHTML= "Победа ЕКЕ ";
-                   } else if ( data.includes('101')){
-                        item.style.backgroundColor="#FFFF00";
-                        area.innerHTML= "Победа КЕК";
-               }; 
+                x++;  
+                if (x % 2 == 1){
+                  if (base[item.id - 1] == '0' || base[item.id - 1] == '1'){
+                        area.innerHTML= 'Выберите свободное поле'
+                        area.style.color = 'red';
+                        x = 0;
+                      } else {
+                        area.style.color = 'black'
+                        base[item.id-1] = '1';
+                        item.innerHTML = 'K';
+                        item.style.backgroundColor="#FA8072"
+                        area.innerHTML= "Ход второго игрока... (Ход буквы Е)"
+                        dataF(); 
+                         if (data.includes('010') &&  data.includes('101')) {
+                              item.style.backgroundColor="#FFFF00";
+                              area.innerHTML= "Ничья Игра завершена.";
+                         } else if (data.includes('010')){
+                              item.style.backgroundColor="#FFFF00";
+                              area.innerHTML= "Победа ЕКЕ! Поздравляем! Игра завершена. ";
+                         } else if ( data.includes('101')){
+                              item.style.backgroundColor="#FFFF00";
+                              area.innerHTML= "Победа КЕК! Поздравляем! Игра завершена.";}
+                }} else if( x % 2 == 0){
+                        if (base[item.id - 1] == '0' || base[item.id - 1] == '1'){
+                        area.innerHTML= 'Выберите свободное поле'
+                        area.style.color = 'red';
+                        x = 1;
+                      } else {
+                        area.style.color = 'black'
+                        base[item.id-1] = '0';
+                        item.innerHTML = 'E';
+                        item.style.backgroundColor="#87CEFA"
+                        area.innerHTML= "Ход первого игрока... (Ход буквы К)"
+                        dataF(); 
+                         if (data.includes('010') &&  data.includes('101')) {
+                              item.style.backgroundColor="#FFFF00";
+                              area.innerHTML= "Ничья Игра завершена.";
+                         } else if (data.includes('010')){
+                              item.style.backgroundColor="#FFFF00";
+                              area.innerHTML= "Победа ЕКЕ! Поздравляем! Игра завершена. ";
+                         } else if ( data.includes('101')){
+                              item.style.backgroundColor="#FFFF00";
+                              area.innerHTML= "Победа КЕК! Поздравляем! Игра завершена.";}; 
+                        }}
+
           });
       });
   }
