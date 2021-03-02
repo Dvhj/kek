@@ -3,28 +3,32 @@ body{
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	background:#e3f0cd;
+	background:#f1d881;
 }
 .start {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 1%;
+	font-size: 18px;
 }
 .duo{
-	box-shadow:0 5px 5px gray;
+	box-shadow:0 5px 5px #ba883d;
 	cursor: pointer;
 }
-.bot{box-shadow:0 5px 5px gray;
+.bot{
+	box-shadow:0 5px 5px #ba883d;
 	cursor: pointer;
-	}
+}
 .help {
 	padding-right: 0;
 	padding-left: 0;
 	background-color: #f7ffad;
 	border-radius: 3px;
-	box-shadow:0 5px 5px gray;
+	box-shadow:0 5px 5px #ba883d;
 	cursor: pointer;
-
+}
+.shadow {
+	font-size: 18px;
 }
 .contain{
 	display: flex;
@@ -35,23 +39,24 @@ body{
 	justify-content: center;
 	flex-wrap: wrap;
 	max-width: 500px;
-	border:1px solid black;
+	border:1px solid #5b5643;
 	border-radius: 4px;
 	background-color: #fff;
 }
 
 .block{
-	border:1px solid black;
+	border:1px solid #5b5643;
 	min-width: 90px;
 	min-height: 90px;
 	font-size: 40px;
 	text-align: center;
 	border-radius: 4px;
+	color: #443020;
 }
 
 .block:hover{
 	cursor: pointer;
-	background-color:#bdc6c7;
+	background-color:#f9f4e6;
 }
 .text{
 	display: flex;
@@ -64,10 +69,11 @@ body{
 	min-width: 500px;
 	max-width: 500px;
 	min-height: 150px;
-	border:1px solid black;
+	border:1px solid #5b5643;
 	border-radius: 4px;
 	text-align: center;
 	margin-bottom: 1%;
+	color: #443020;
 }
 
 .newGame{
@@ -78,30 +84,13 @@ body{
 
 .new{
 	font-size: 20px;
-	border:1px solid black;
+	border:1px solid #5b5643;
 	border-radius: 4px;
 	max-width: 500px;
-	box-shadow:0 5px 5px gray;
+	box-shadow:0 5px 5px #ba883d;
 	cursor: pointer;
-}
-.buttons {
-	display: none;
-	justify-content: center;
-	margin-bottom: 1%;
 }
 
-.k{
-	padding:5px 20px;
-	min-width: 7%;
-	box-shadow:0 5px 5px gray;
-	cursor: pointer;
-}
-.e{
-	padding:5px 20px;
-	min-width: 7%;
-	box-shadow:0 5px 5px gray;
-	cursor: pointer;
-}
 .boxHelp{
 	display: none;
 	flex-direction: column;
@@ -111,8 +100,9 @@ body{
 	height: 70%;
 	background:#f0f8ff;
 	font-size: 35px;
-	border:1px solid black;
+	border:1px solid #5b5643;
 	border-radius: 4px;
+	box-shadow:0 10px 5px #ba883d;	
 }
 .boxHelp p {
 	margin: 2%;
@@ -124,11 +114,32 @@ body{
 }
 .butHelp{
 	max-width: 400px;
-	box-shadow:0 5px 5px gray;
+	box-shadow:0 5px 5px #ba883d;
 }
-
+#ba883d
 .shadow:active {
-	box-shadow:0 0 0 gray;
+	box-shadow:0 0 0 #ba883d;
+}
+.forever_alone{
+	display: none;
+	position: absolute;
+	top:30%;
+	left:20%;
+	max-width: 15%;
+}
+.megusta {
+	display: none;
+	position: absolute;
+	top:30%;
+	left:20%;
+	max-width: 15%;
+}
+.poker {
+	display: none;
+	position: absolute;
+	top:30%;
+	left:65%;
+	max-width: 15%;
 }
 @media screen and (max-width: 700px) {
 
@@ -140,7 +151,7 @@ body{
 	.area {
 		min-width: 97%;
 		max-width: 98%;
-		font-size: 17px;
+		font-size: 30px;
 		max-height: 10%;
 		min-height: 10%;
 	}
@@ -153,5 +164,52 @@ body{
 	.boxHelp{
 		width:99%;
 		font-size: 25px;}
+	.shadow {
+		font-size: 14px;
+	}
+	.forever_alone{
+		display: none;
+		position: absolute;
+		top:73%;
+		left:5%;
+		max-width: 30%;
+	}
+	.megusta {
+		display: none;
+		position: absolute;
+		top:73%;
+		left:9%;
+		max-width: 30%;
+	}
+	.poker {
+		display: none;
+		position: absolute;
+		top:73%;
+		left:65%;
+		max-width: 30%;
+	}
+}
 
+@media screen and (max-width: 1550px) {
+	.forever_alone{
+		display: none;
+		position: absolute;
+		top:80%;
+		left:5%;
+		max-width: 30%;
+	}
+	.megusta {
+		display: none;
+		position: absolute;
+		top:80%;
+		left:9%;
+		max-width: 30%;
+	}
+	.poker {
+		display: none;
+		position: absolute;
+		top:80%;
+		left:65%;
+		max-width: 30%;
+	}
 }
