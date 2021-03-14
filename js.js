@@ -23,55 +23,56 @@ let numb = '';
 
 // НАПИСАТЬ КОД ДЛЯ ПОДВСЕТКИ ВЫИГРЫШНОЙ КОМБИНАЦИИ
 
+
 function dataF () {
-                data[0] = base[0]+base[1]+base[2];
-                data[1] = base[1]+base[2]+base[3];
-                data[2] = base[2]+base[3]+base[4];
-                data[3] = base[5]+base[6]+base[7];
-                data[4] = base[6]+base[7]+base[8];
-                data[5] = base[7]+base[8]+base[9];
-                data[6]= base[10]+base[11]+base[12];
-                data[7] = base[11]+base[12]+base[13];
-                data[8] = base[12]+base[13]+base[14];
-                data[9] = base[15]+base[16]+base[17];
-                data[10] = base[16]+base[17]+base[18];
-                data[11] = base[17]+base[18]+base[19];
-                data[12] = base[20]+base[21]+base[22];
-                data[13] = base[21]+base[22]+base[23];
-                data[14] = base[22]+base[23]+base[24];
-                data[15] = base[0]+base[5]+base[10];
-                data[20] = base[5]+base[10]+base[15];
-                data[25] = base[10]+base[15]+base[20];
-                data[16]= base[1]+base[6]+base[11];
-                data[21] = base[6]+base[11]+base[16];
-                data[26] = base[11]+base[16]+base[21];
-                data[17] = base[2]+base[7]+base[12];
-                data[22] = base[7]+base[12]+base[17];
-                data[27] = base[12]+base[17]+base[22];
-                data[18] = base[3]+base[8]+base[13];
-                data[23] = base[8]+base[13]+base[18];
-                data[28] = base[13]+base[18]+base[23];
-                data[19] = base[4]+base[9]+base[14];
-                data[24] = base[9]+base[14]+base[19];
-                data[29] = base[14]+base[19]+base[24];
-                data[32] = base[2]+base[8]+base[14];
-                data[31] = base[1]+base[7]+base[13];
-                data[37] = base[7]+base[13]+base[19];
-                data[30] = base[0]+base[6]+base[12];
-                data[36] = base[6]+base[12]+base[18];
-                data[42] = base[12]+base[18]+base[24];
-                data[35] = base[5]+base[11]+base[17];
-                data[41] = base[11]+base[17]+base[23];
-                data[40] = base[10]+base[16]+base[22];
-                data[45] = base[2]+base[6]+base[10];
-                data[33] = base[3]+base[7]+base[11];
-                data[46] = base[7]+base[11]+base[15];
-                data[34] = base[4]+base[8]+base[12];
-                data[38] = base[8]+base[12]+base[16];
-                data[47] = base[12]+base[16]+base[20];
-                data[39] = base[9]+base[13]+base[17];
-                data[43] = base[13]+base[17]+base[21];
-                data[44] = base[14]+base[18]+base[22];
+  data[0] = base[0]+base[1]+base[2];
+  data[1] = base[1]+base[2]+base[3];
+  data[2] = base[2]+base[3]+base[4];
+  data[3] = base[5]+base[6]+base[7];
+  data[4] = base[6]+base[7]+base[8];
+  data[5] = base[7]+base[8]+base[9];
+  data[6]= base[10]+base[11]+base[12];
+  data[7] = base[11]+base[12]+base[13];
+  data[8] = base[12]+base[13]+base[14];
+  data[9] = base[15]+base[16]+base[17];
+  data[10] = base[16]+base[17]+base[18];
+  data[11] = base[17]+base[18]+base[19];
+  data[12] = base[20]+base[21]+base[22];
+  data[13] = base[21]+base[22]+base[23];
+  data[14] = base[22]+base[23]+base[24];
+  data[15] = base[0]+base[5]+base[10];
+  data[20] = base[5]+base[10]+base[15];
+  data[25] = base[10]+base[15]+base[20];
+  data[16]= base[1]+base[6]+base[11];
+  data[21] = base[6]+base[11]+base[16];
+  data[26] = base[11]+base[16]+base[21];
+  data[17] = base[2]+base[7]+base[12];
+  data[22] = base[7]+base[12]+base[17];
+  data[27] = base[12]+base[17]+base[22];
+  data[18] = base[3]+base[8]+base[13];
+  data[23] = base[8]+base[13]+base[18];
+  data[28] = base[13]+base[18]+base[23];
+  data[19] = base[4]+base[9]+base[14];
+  data[24] = base[9]+base[14]+base[19];
+  data[29] = base[14]+base[19]+base[24];
+  data[32] = base[2]+base[8]+base[14];
+  data[31] = base[1]+base[7]+base[13];
+  data[37] = base[7]+base[13]+base[19];
+  data[30] = base[0]+base[6]+base[12];
+  data[36] = base[6]+base[12]+base[18];
+  data[42] = base[12]+base[18]+base[24];
+  data[35] = base[5]+base[11]+base[17];
+  data[41] = base[11]+base[17]+base[23];
+  data[40] = base[10]+base[16]+base[22];
+  data[45] = base[2]+base[6]+base[10];
+  data[33] = base[3]+base[7]+base[11];
+  data[46] = base[7]+base[11]+base[15];
+  data[34] = base[4]+base[8]+base[12];
+  data[38] = base[8]+base[12]+base[16];
+  data[47] = base[12]+base[16]+base[20];
+  data[39] = base[9]+base[13]+base[17];
+  data[43] = base[13]+base[17]+base[21];
+  data[44] = base[14]+base[18]+base[22];
 }
 
 help.addEventListener('click', function(){
@@ -112,14 +113,12 @@ bot.addEventListener('click', function(){
 });
 
 
-let random = function rand(min, max) {
+let random = function (min, max) {
       min = Math.ceil(0)
       max = Math.floor(24);
       return Math.floor(Math.random() * (max - min + 1)) + min;
 };
-function end () {
-  location.reload()
-}
+
 function winE () {
   blocks[checkWinBot].style.backgroundColor="#87CEFA";
   blocks[checkWinBot].innerHTML = 'E';
@@ -127,7 +126,7 @@ function winE () {
 }
 
 function defEFirst (){
-   if (numb == '0' || numb == '1' || numb == '2' ){
+  if (numb == '0' || numb == '1' || numb == '2' ){
     checkWinBot = numb;
     winE ();}
   if (numb == '3' || numb == '4' || numb == '5' ){
@@ -260,7 +259,13 @@ function main() {
       if (fact == true) {
         console.log(base);
         area.innerHTML = "Ход компьютера... ";
-        setTimeout( point, 500);
+        setTimeout( point, random()*100);
+        let a = document.createElement('div');
+        a.style.width = '100%';
+        a.style.height = '100%';
+        a.style.opacity = '0';
+        a.style.position = 'absolute';
+        document.querySelector('.box').appendChild(a);
         function point(){
           kAk();
           let x = random();
@@ -273,9 +278,11 @@ function main() {
               if (data.includes('010') &&  data.includes('101')) {
                     blocks[checkWinBot].style.backgroundColor="#FFFF00";
                     area.innerHTML= "Ничья";
+                    die()
               } else if (data.includes('010')){
                     blocks[checkWinBot].style.backgroundColor="#FFFF00";
-                    area.innerHTML= "Победа Компьютера";}
+                    area.innerHTML= "Победа Компьютера";
+                    die()}
           } else if (data.includes('10a') && data.includes('01a')){
             numb = data.indexOf('01a');
             console.log(numb);
@@ -284,9 +291,11 @@ function main() {
               if (data.includes('010') &&  data.includes('101')) {
                     blocks[checkWinBot].style.backgroundColor="#FFFF00";
                     area.innerHTML= "Ничья";
+                    die()
               } else if (data.includes('010')){
                     blocks[checkWinBot].style.backgroundColor="#FFFF00";
-                    area.innerHTML= "Победа Компьютера";}          
+                    area.innerHTML= "Победа Компьютера";
+                    die()}          
           } else if (data.includes('a01')){
             numb = data.indexOf('a01')
             console.log(numb);
@@ -300,9 +309,11 @@ function main() {
               if (data.includes('010') &&  data.includes('101')) {
                     blocks[checkWinBot].style.backgroundColor="#FFFF00";
                     area.innerHTML= "Ничья";
+                    die()
               } else if (data.includes('010')){
                     blocks[checkWinBot].style.backgroundColor="#FFFF00";
-                    area.innerHTML= "Победа Компьютера";}
+                    area.innerHTML= "Победа Компьютера";
+                    die() }
             } else if (data.includes('10a')){
             numb = data.indexOf('10a')
             console.log(numb);
@@ -316,9 +327,12 @@ function main() {
               if (data.includes('010') &&  data.includes('101')) {
                     blocks[checkWinBot].style.backgroundColor="#FFFF00";
                     area.innerHTML= "Ничья";
+                    die()
               } else if (data.includes('010')){
                     blocks[checkWinBot].style.backgroundColor="#FFFF00";
-                    area.innerHTML= "Победа Компьютера";}
+                    area.innerHTML= "Победа Компьютера";
+                    die()
+                  }
             }  else if (base[x] == '1' || base[x] == '0' || x == checkWinBot){
                 point();
             } else {
@@ -331,14 +345,18 @@ function main() {
                 if (data.includes('010') &&  data.includes('101')) {
                       blocks[x].style.backgroundColor="#FFFF00";
                       area.innerHTML= "Ничья";
+                      die()
                  } else if (data.includes('010')){
                       blocks[x].style.backgroundColor="#FFFF00";
                       area.innerHTML= "Победа Компьютера";
+                      die()
                  } else if ( data.includes('101')){
                       blocks[x].style.backgroundColor="#FFFF00";
                       area.innerHTML= "Победа КЕКаря";
+                      die()
           }; 
        };
+       a.remove();
     };
   };
 }
@@ -363,14 +381,17 @@ function botGame() {
                     fact = false;
                     item.style.backgroundColor="#FFFF00";
                     area.innerHTML= "Ничья";
+                    die()
                } else if (data.includes('010')){
                     fact = false;
                     item.style.backgroundColor="#FFFF00";
                     area.innerHTML= "Победа Компьютера";
+                    die()
                } else if ( data.includes('101')){
                     fact = false;
                     item.style.backgroundColor="#FFFF00";
                     area.innerHTML= "Победа КЕКаря";
+                    die()
                   }; 
                 main();
             };
@@ -397,12 +418,16 @@ function duoGame() {
                          if (data.includes('010') &&  data.includes('101')) {
                               item.style.backgroundColor="#FFFF00";
                               area.innerHTML= "Ничья Игра завершена.";
+                              die()
                          } else if (data.includes('010')){
                               item.style.backgroundColor="#FFFF00";
                               area.innerHTML= "Победа ЕКЕ! Поздравляем! Игра завершена. ";
+                              die()
                          } else if ( data.includes('101')){
                               item.style.backgroundColor="#FFFF00";
-                              area.innerHTML= "Победа КЕК! Поздравляем! Игра завершена.";}
+                              area.innerHTML= "Победа КЕК! Поздравляем! Игра завершена.";
+                              die()
+                              }
                 }} else if( x % 2 == 0){
                         if (base[item.id - 1] == '0' || base[item.id - 1] == '1'){
                         area.innerHTML= 'Выберите свободное поле'
@@ -418,14 +443,27 @@ function duoGame() {
                          if (data.includes('010') &&  data.includes('101')) {
                               item.style.backgroundColor="#FFFF00";
                               area.innerHTML= "Ничья Игра завершена.";
+                              die()
                          } else if (data.includes('010')){
                               item.style.backgroundColor="#FFFF00";
                               area.innerHTML= "Победа ЕКЕ! Поздравляем! Игра завершена. ";
+                              die()
                          } else if ( data.includes('101')){
                               item.style.backgroundColor="#FFFF00";
-                              area.innerHTML= "Победа КЕК! Поздравляем! Игра завершена.";}; 
+                              area.innerHTML= "Победа КЕК! Поздравляем! Игра завершена.";
+                              die()
+                            }; 
                         }}
 
           });
       });
   }
+function die(){
+  let a = document.createElement('div');
+  a.style.width = '100%';
+  a.style.height = '100%';
+  a.style.opacity = '0';
+  a.style.position = 'absolute';
+  document.querySelector('.box').appendChild(a);
+}
+
