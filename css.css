@@ -159,7 +159,9 @@ body{
 		min-height: 10%;
 	}
 	.box {
-		max-width: 98%;}
+		max-width: 98%;
+		min-width: 290px;
+	}
 	.text{
 		display: flex;
 		justify-content: center;
