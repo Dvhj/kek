@@ -259,7 +259,7 @@ function main() {
       if (fact == true) {
         console.log(base);
         area.innerHTML = "Ход компьютера... ";
-        setTimeout( point, random()*100);
+        setTimeout( point, (random()+10)*100);
         let a = document.createElement('div');
         a.style.width = '100%';
         a.style.height = '100%';
