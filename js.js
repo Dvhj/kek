@@ -20,6 +20,8 @@ let fact = true;
 let check = '';
 let checkWinBot = '';
 let numb = '';
+let kak = '';
+let audio = '';
 
 // НАПИСАТЬ КОД ДЛЯ ПОДВСЕТКИ ВЫИГРЫШНОЙ КОМБИНАЦИИ
 
@@ -75,7 +77,20 @@ function dataF () {
   data[44] = base[14]+base[18]+base[22];
 }
 
+function click() {
+  audio = new Audio(); // Создаём новый элемент Audio
+  audio.src = '10e1076dfd6c701.mp3'; // Указываем путь к звуку "клика"
+  audio.autoplay = true; // Автоматически запускаем
+}
+
+function error() {
+  audio = new Audio(); // Создаём новый элемент Audio
+  audio.src = 'd93143ec6aa8356.mp3'; // Указываем путь к звуку "клика"
+  audio.autoplay = true; // Автоматически запускаем
+}
+
 help.addEventListener('click', function(){
+  click();
   boxHelp.style.display='flex'
   boxHelp.style.zIndex = '5'
   newGame.style.display='none'
@@ -86,16 +101,19 @@ help.addEventListener('click', function(){
 });
 
 butHelp.addEventListener('click', function(){
+  click();
   boxHelp.style.display='none'
   newGame.style.display='flex'
   box.style.display='flex'
 });
 
 newGame.addEventListener('click', function(){
+    click();
     location.reload()
 });
 
 duo.addEventListener('click', function(){
+  click();
   area.innerHTML = "Выберите поле и сделайте ход (Ход буквы К)"
   duo.style.display = 'none';
   bot.style.display = 'none';
@@ -105,6 +123,7 @@ duo.addEventListener('click', function(){
 });
 
 bot.addEventListener('click', function(){
+  click();
   area.innerHTML = "Выберите поле и сделайте ход "
   duo.style.display = 'none';
   bot.style.display = 'none';
@@ -220,36 +239,36 @@ function kAk (){
     if (data.includes('1a1') ) { 
         numb = data.indexOf('1a1');
       if (numb == '0' || numb == '1' || numb == '2' ){
-        checkWinBot = numb+1;}
+        kak = numb+1;}
       if (numb == '3' || numb == '4' || numb == '5' ){
-        checkWinBot = numb+3;}
+        kak = numb+3;}
       if (numb == '6' || numb == '7' || numb == '8' ){
-        checkWinBot = numb+5;}  
+        kak = numb+5;}  
       if (numb == '9' || numb == '10' || numb == '11' ){
-        checkWinBot = numb+7;}
+        kak = numb+7;}
       if (numb == '12' || numb == '13' || numb == '14' ){
-        checkWinBot = numb +9;}
+        kak = numb +9;}
       if ( numb == '15' || numb == '16' || numb == '17' ||
           numb == '18' || numb == '19' || numb == '20'  ||
           numb == '21' || numb == '22' || numb == '23'  ||
           numb == '24' || numb == '25' || numb == '26'  ||
           numb == '27' || numb == '28' || numb == '29' ) {
-          checkWinBot = numb -10;}
+          kak = numb -10;}
       if (numb == '30' || numb == '31' || numb == '32' ||
            numb == '35' || numb == '36' || numb == '37' ||  numb == '40' 
           || numb == '41'  || numb == '42' ) {
-          checkWinBot = numb -24;}
+          kak = numb -24;}
       if (numb == '33' || numb == '34' || numb == '38' ||
            numb == '39' || numb == '43' || numb == '44' ) {
-          checkWinBot = numb -26;} 
+          kak = numb -26;} 
         if (numb == 45){
-          checkWinBot = numb -39;
+          kak = numb -39;
         }
         if (numb == 46){
-          checkWinBot = numb -35;
+          kak = numb -35;
         }
         if (numb == 47){
-          checkWinBot = numb -31;
+          kak = numb -31;
     }
   }
 }
@@ -259,7 +278,7 @@ function main() {
       if (fact == true) {
         console.log(base);
         area.innerHTML = "Ход компьютера... ";
-        setTimeout( point, (random()+10)*100);
+        setTimeout( point, (random()+5)*100);
         let a = document.createElement('div');
         a.style.width = '100%';
         a.style.height = '100%';
@@ -268,6 +287,7 @@ function main() {
         document.querySelector('.box').appendChild(a);
         function point(){
           kAk();
+          console.log(kak);
           let x = random();
           console.log(x);
           if (data.includes('a01') && data.includes('a10')){
@@ -275,27 +295,27 @@ function main() {
             console.log(numb);   
              defEFirst();
               dataF();
-              if (data.includes('010') &&  data.includes('101')) {
-                    blocks[checkWinBot].style.backgroundColor="#FFFF00";
-                    area.innerHTML= "Ничья";
-                    die()
-              } else if (data.includes('010')){
-                    blocks[checkWinBot].style.backgroundColor="#FFFF00";
-                    area.innerHTML= "Победа Компьютера";
-                    die()}
+            if (data.includes('010') &&  data.includes('101')) {
+              blocks[checkWinBot].style.backgroundColor="#FFFF00";
+              area.innerHTML= "Ничья";
+              die()
+            } else if (data.includes('010')){
+                blocks[checkWinBot].style.backgroundColor="#FFFF00";
+                area.innerHTML= "Победа Компьютера";
+                die()}
           } else if (data.includes('10a') && data.includes('01a')){
             numb = data.indexOf('01a');
             console.log(numb);
              defETwo(); 
               dataF();
-              if (data.includes('010') &&  data.includes('101')) {
-                    blocks[checkWinBot].style.backgroundColor="#FFFF00";
-                    area.innerHTML= "Ничья";
-                    die()
-              } else if (data.includes('010')){
-                    blocks[checkWinBot].style.backgroundColor="#FFFF00";
-                    area.innerHTML= "Победа Компьютера";
-                    die()}          
+            if (data.includes('010') &&  data.includes('101')) {
+                blocks[checkWinBot].style.backgroundColor="#FFFF00";
+                area.innerHTML= "Ничья";
+                die()
+            } else if (data.includes('010')){
+                blocks[checkWinBot].style.backgroundColor="#FFFF00";
+                area.innerHTML= "Победа Компьютера";
+                die()}          
           } else if (data.includes('a01')){
             numb = data.indexOf('a01')
             console.log(numb);
@@ -306,54 +326,54 @@ function main() {
             console.log(numb);
              defEFirst();
               dataF();
-              if (data.includes('010') &&  data.includes('101')) {
-                    blocks[checkWinBot].style.backgroundColor="#FFFF00";
-                    area.innerHTML= "Ничья";
-                    die()
-              } else if (data.includes('010')){
-                    blocks[checkWinBot].style.backgroundColor="#FFFF00";
-                    area.innerHTML= "Победа Компьютера";
-                    die() }
-            } else if (data.includes('10a')){
+            if (data.includes('010') &&  data.includes('101')) {
+                  blocks[checkWinBot].style.backgroundColor="#FFFF00";
+                  area.innerHTML= "Ничья";
+                  die()
+            } else if (data.includes('010')){
+                  blocks[checkWinBot].style.backgroundColor="#FFFF00";
+                  area.innerHTML= "Победа Компьютера";
+                  die() }
+          } else if (data.includes('10a')){
             numb = data.indexOf('10a')
             console.log(numb);
             defETwo();
             area.innerHTML= "Ваш ход..."
-            } else if (data.includes('01a')){
+          } else if (data.includes('01a')){
             numb = data.indexOf('01a');
             console.log(numb);
             defETwo();
               dataF();
+            if (data.includes('010') &&  data.includes('101')) {
+                  blocks[checkWinBot].style.backgroundColor="#FFFF00";
+                  area.innerHTML= "Ничья";
+                  die()
+            } else if (data.includes('010')){
+                  blocks[checkWinBot].style.backgroundColor="#FFFF00";
+                  area.innerHTML= "Победа Компьютера";
+                  die()
+                }
+          }  else if (base[x] == '1' || base[x] == '0' || x == kak){
+              point();
+          } else {
+            blocks[x].style.backgroundColor="#87CEFA";
+            blocks[x].innerHTML = 'E';
+            base[x] = '0';
+            area.innerHTML = "Ваш ход... "
+            dataF();
+              console.log(data);
               if (data.includes('010') &&  data.includes('101')) {
-                    blocks[checkWinBot].style.backgroundColor="#FFFF00";
+                    blocks[x].style.backgroundColor="#FFFF00";
                     area.innerHTML= "Ничья";
                     die()
-              } else if (data.includes('010')){
-                    blocks[checkWinBot].style.backgroundColor="#FFFF00";
+               } else if (data.includes('010')){
+                    blocks[x].style.backgroundColor="#FFFF00";
                     area.innerHTML= "Победа Компьютера";
                     die()
-                  }
-            }  else if (base[x] == '1' || base[x] == '0' || x == checkWinBot){
-                point();
-            } else {
-              blocks[x].style.backgroundColor="#87CEFA";
-              blocks[x].innerHTML = 'E';
-              base[x] = '0';
-              area.innerHTML = "Ваш ход... "
-              dataF();
-                console.log(data);
-                if (data.includes('010') &&  data.includes('101')) {
-                      blocks[x].style.backgroundColor="#FFFF00";
-                      area.innerHTML= "Ничья";
-                      die()
-                 } else if (data.includes('010')){
-                      blocks[x].style.backgroundColor="#FFFF00";
-                      area.innerHTML= "Победа Компьютера";
-                      die()
-                 } else if ( data.includes('101')){
-                      blocks[x].style.backgroundColor="#FFFF00";
-                      area.innerHTML= "Победа КЕКаря";
-                      die()
+               } else if ( data.includes('101')){
+                    blocks[x].style.backgroundColor="#FFFF00";
+                    area.innerHTML= "Победа КЕКаря";
+                    die()
           }; 
        };
        a.remove();
@@ -366,7 +386,9 @@ function main() {
 function botGame() {
     blocks.forEach (function (item){
       item.addEventListener('click', function () {
+		click();
             if (base[item.id - 1] == '0' || base[item.id - 1] == '1'){
+		error();
               area.innerHTML= 'Выберите свободное поле'
               area.style.color = 'red';
             }
@@ -402,9 +424,11 @@ function botGame() {
 function duoGame() {
     blocks.forEach(function(item){
           item.addEventListener('click', function () {
+		click();
                 x++;  
                 if (x % 2 == 1){
                   if (base[item.id - 1] == '0' || base[item.id - 1] == '1'){
+			error();
                         area.innerHTML= 'Выберите свободное поле'
                         area.style.color = 'red';
                         x = 0;
@@ -412,8 +436,8 @@ function duoGame() {
                         area.style.color = 'black'
                         base[item.id-1] = '1';
                         item.innerHTML = 'K';
-                        item.style.backgroundColor="#FA8072"
-                        area.innerHTML= "Ход второго игрока... (Ход буквы Е)"
+                        item.style.backgroundColor="#FA8072";
+			area.innerHTML= "Ход второго игрока... (Ход буквы Е)";
                         dataF(); 
                          if (data.includes('010') &&  data.includes('101')) {
                               item.style.backgroundColor="#FFFF00";
@@ -430,6 +454,7 @@ function duoGame() {
                               }
                 }} else if( x % 2 == 0){
                         if (base[item.id - 1] == '0' || base[item.id - 1] == '1'){
+			error();
                         area.innerHTML= 'Выберите свободное поле'
                         area.style.color = 'red';
                         x = 1;
@@ -458,6 +483,7 @@ function duoGame() {
           });
       });
   }
+
 function die(){
   let a = document.createElement('div');
   a.style.width = '100%';
@@ -466,4 +492,3 @@ function die(){
   a.style.position = 'absolute';
   document.querySelector('.box').appendChild(a);
 }
-
