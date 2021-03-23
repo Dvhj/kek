@@ -3,7 +3,7 @@ body{
 	margin: 0;
 	display: flex;
 	flex-direction: column;
-	background:#f1d881;
+	background: url(grey-wood-pane.png);
 }
 .start {
 	display: flex;
@@ -12,11 +12,11 @@ body{
 	font-size: 18px;
 }
 .duo{
-	box-shadow:0 5px 5px #ba883d;
+	box-shadow:0 5px 5px gray;
 	cursor: pointer;
 }
 .bot{
-	box-shadow:0 5px 5px #ba883d;
+	box-shadow:0 5px 5px gray;
 	cursor: pointer;
 }
 .help {
@@ -24,7 +24,7 @@ body{
 	padding-left: 0;
 	background-color: #f7ffad;
 	border-radius: 3px;
-	box-shadow:0 5px 5px #ba883d;
+	box-shadow:0 5px 5px gray;
 	cursor: pointer;
 }
 .shadow {
@@ -43,7 +43,7 @@ body{
 	border-radius: 4px;
 	background-color: #fff;
 	position: relative;
-	background-color: #D2B48C;
+	background-color: white;
 }
 
 .block{
@@ -90,7 +90,7 @@ body{
 	border:1px solid #5b5643;
 	border-radius: 4px;
 	max-width: 500px;
-	box-shadow:0 5px 5px #ba883d;
+	box-shadow:0 5px 5px gray;
 	cursor: pointer;
 }
 
@@ -105,7 +105,7 @@ body{
 	font-size: 35px;
 	border:1px solid #5b5643;
 	border-radius: 4px;
-	box-shadow:0 10px 5px #ba883d;	
+	box-shadow:0 10px 5px gray;	
 }
 .boxHelp p {
 	margin: 2%;
@@ -117,11 +117,12 @@ body{
 }
 .butHelp{
 	max-width: 400px;
-	box-shadow:0 5px 5px #ba883d;
+	box-shadow:0 5px 5px gray;
+	cursor: pointer;
 }
-#ba883d
+
 .shadow:active {
-	box-shadow:0 0 0 #ba883d;
+	box-shadow:0 0 0 ;
 }
 .forever_alone{
 	display: none;
