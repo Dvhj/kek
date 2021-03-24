@@ -7,16 +7,24 @@
 	<title>Document</title>
 </head>
 <body>
-	<div class="start">
-		<button class='duo shadow'> Начать игру с человеком </button>
-		<button class='bot shadow'> Начать игру с компьютером </button>
-		<button class="help shadow"> Правила</button>
-		<div class="boxHelp"> <p>Нужно расположить свои буквы так, чтобы сформировалось слово 'КЕК', используя поставленные буквы противника. Ваш противник же должен сформировать слово 'ЕКЕ'. Выигрывает тот, кто соберет слово первым.</p>
-		<div class=boxButHelp><button class="butHelp shadow"> Ничего не понятно,но я готов!</button></div>
+	<div class="container">
+		<div class="start">
+			<button class="help shadow"> Правила</button>
+			<div class="boxHelp"> <p>Нужно расположить свои буквы так, чтобы сформировалось слово 'КЕК', используя поставленные буквы противника. Ваш противник же должен сформировать слово 'ЕКЕ'. Выигрывает тот, кто соберет слово первым.</p>
+			<div class=boxButHelp><button class="butHelp shadow"> Ничего не понятно,но я готов!</button></div>
+			</div>
 		</div>
-	</div>
-	<div class="text">
-	<label name="text" class="area"  disabled> Приветствуем вас в игре КЕКАРЬ! Выберите режим игры</label>
+		<div class="text">
+			<div class="box-area" > <div class="area"> Приветствуем вас в игре КЕКАРЬ! Выберите режим игры </div> </div>
+		</div>
+		<div class="start">
+			<button class='duo shadow'> Начать игру с человеком </button>
+			<button class='bot shadow'> Начать игру с компьютером </button>
+		</div>
+		<div class="timerBox"> Время игры: </div>
+		<div class=newGame>
+		<button class="new shadow"> Новая игра</button>
+		</div>
 	</div>
 	<img src="forever_alone_640.png" class=forever_alone alt="alone">
 	<img src="megusta_640.png" class=megusta alt="megusta">
@@ -50,9 +58,17 @@
 			<div class="block" id=25></div>
 		</div>
 	</div>
-	<div class=newGame>
-		<button class="new shadow"> Новая игра</button>
+	<div class="statCont">
+		<div class="statBox">
+			<div class="statText"> Статистика игр с компьютером <br> <br></div>
+			<div class="statNav">
+				<button class='record shadow'>Запись статистики</button>
+				<button class='clean shadow'>Очистка статистики</button>
+			</div>
+			<div class="statInfo"> Всего игр: __ <br> <br> Ваши победы: __<br><br> Победы Компьютера: __<br> <br> Ничьи: __<br><br> </div>
+		</div>
 	</div>
+	<div class="t"></div>
 		<script src="js.js"> </script>
 </body>
 </html>
