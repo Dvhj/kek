@@ -2,8 +2,15 @@ body{
 	padding-top: 2%;
 	margin: 0;
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	background: url(grey-wood-pane.png);
+}
+.container{
+	margin: 0 2%;
+	display: flex;
+	flex-direction: column;
+	min-width: 30%;
+	max-width: 30%;
 }
 .start {
 	display: flex;
@@ -11,14 +18,18 @@ body{
 	margin-bottom: 1%;
 	font-size: 18px;
 }
-.duo{
-	box-shadow:0 5px 5px gray;
-	cursor: pointer;
+.timerBox {
+	display: none;
+	font-size: 40px;
+	min-height: 50px;
+	border:3px solid gray;
+	border-radius: 4px;
+	text-align: center;
+	margin-bottom: 1%;
+	color: #443020;
 }
-.bot{
-	box-shadow:0 5px 5px gray;
-	cursor: pointer;
-}
+
+
 .help {
 	padding-right: 0;
 	padding-left: 0;
@@ -28,29 +39,31 @@ body{
 	cursor: pointer;
 }
 .shadow {
+	box-shadow:0 5px 5px gray;
+	cursor: pointer;
 	font-size: 18px;
 }
 .contain{
 	display: flex;
 	justify-content: center;
+	margin-right: 2%;
 }
 .box {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	max-width: 470px;
+	max-width: 810px;
 	border:1px solid #5b5643;
 	border-radius: 4px;
 	background-color: #fff;
 	position: relative;
-	background-color: white;
 }
 
 .block{
 	border:1px solid #5b5643;
-	min-width: 90px;
-	min-height: 90px;
-	font-size: 40px;
+	min-width: 160px;
+	min-height: 160px;
+	font-size: 100px;
 	text-align: center;
 	border-radius: 4px;
 	color: #443020;
@@ -61,18 +74,12 @@ body{
 	cursor: pointer;
 	background-color:#f9f4e6;
 }
-.text{
-	display: flex;
-	justify-content: center;
-	
-}
 
-.area {
+
+.box-area {
 	font-size: 40px;
-	min-width: 500px;
-	max-width: 500px;
 	min-height: 150px;
-	border:1px solid #5b5643;
+	border:3px solid gray;
 	border-radius: 4px;
 	text-align: center;
 	margin-bottom: 1%;
@@ -92,6 +99,7 @@ body{
 	max-width: 500px;
 	box-shadow:0 5px 5px gray;
 	cursor: pointer;
+	display: none;
 }
 
 .boxHelp{
@@ -100,7 +108,8 @@ body{
 	justify-content: space-between;
 	position: absolute;
 	width:70%;
-	height: 70%;
+	height: 80%;
+	left:15%;
 	background:#f0f8ff;
 	font-size: 35px;
 	border:1px solid #5b5643;
@@ -127,41 +136,146 @@ body{
 .forever_alone{
 	display: none;
 	position: absolute;
-	top:30%;
-	left:20%;
+	top:40%;
+	left:10%;
 	max-width: 15%;
 }
 .megusta {
 	display: none;
 	position: absolute;
-	top:30%;
-	left:20%;
+	top:40%;
+	left:5%;
 	max-width: 15%;
 }
 .poker {
 	display: none;
 	position: absolute;
-	top:30%;
-	left:65%;
+	top:40%;
+	left:15%;
 	max-width: 15%;
 }
-@media screen and (max-width: 700px) {
+.statText {
+	min-height: 20%;
+	font-size: 25px;
+	border:3px solid gray;
+	border-radius: 4px;
+	text-align: center;
+	margin-bottom: 1%;
+	color: #443020;
+}
+.statNav {
+	margin-bottom: 2%;
+	display: flex;
+	justify-content: center;
+}
+.statInfo{
+	min-height: 60%;
+	font-size: 25px;
+	border:3px solid gray;
+	border-radius: 4px;
+	text-align: left;
+	margin-bottom: 1%;
+	color: #443020;
+}
+.t {
+	display: none;
+}
+@media screen and (max-width: 1820px) {
+	.forever_alone{
+		display: none;
+		position: absolute;
+		top:50%;
+		left:5%;
+		max-width: 20%;
+	}
+	.megusta {
+		display: none;
+		position: absolute;
+		top:50%;
+		left:2%;
+		max-width: 20%;
+	}
+	.poker {
+		display: none;
+		position: absolute;
+		top:50%;
+		left:15%;
+		max-width: 20%;
+	}
+	.box {
+	max-width: 530px;
+	}
+	.block{
+	min-width: 100px;
+	min-height: 100px;
+	}
+}
 
+@media screen and (max-width: 1330px) {
+	.box {
+	max-width: 360px;
+	}
+	.block{
+	min-width: 70px;
+	min-height: 70px;
+	}
+}
+@media screen and (max-width: 1115px) {
+	.statText {
+		font-size: 15px;}
+	.statCont{
+		max-width: 25%;
+	}
+	.box-area{
+		font-size: 25px;
+	}
+	.box {
+	max-width: 300px;
+	}
+	.block{
+	min-width: 50px;
+	min-height: 50px;
+	}
+}
+@media screen and (max-width: 700px) {
+	body{
+		margin: 0 0
+		display: flex;
+		flex-direction: column;}
+	.container {
+		max-width: 98%;
+	}
+	.statCont{
+		max-width: 98%;
+	}
 	.block{
 		border:1px solid black;
 		min-width: 19%;
-		min-height: 60px;
+		min-height: 10%;
+		height: 60px;
+		font-size: 20px;
 	}
-	.area {
-		min-width: 97%;
-		max-width: 98%;
-		font-size: 30px;
+	.box-area {
+		min-width: 99%;
+		max-width: 99%;
+		font-size: 20px;
 		max-height: 10%;
 		min-height: 10%;
 	}
-	.box {
+	.area {
+		margin:0 5%;
+	}
+	.timerBox{
+		min-width: 97%;
 		max-width: 98%;
-		min-width: 290px;
+		font-size: 30px;
+	}
+	.contain {
+		min-height: 70%;
+	}
+	.box {
+		width: 98%;
+		min-height: 90%;
 	}
 	.text{
 		display: flex;
@@ -173,6 +287,12 @@ body{
 	.shadow {
 		font-size: 14px;
 	}
+	.statInfo{
+		font-size: 15px;
+	}
+	.statText{
+		font-size: 15px;
+	}
 	.forever_alone{
 		display: none;
 		position: absolute;
@@ -196,26 +316,3 @@ body{
 	}
 }
 
-@media screen and (max-width: 1550px) {
-	.forever_alone{
-		display: none;
-		position: absolute;
-		top:80%;
-		left:5%;
-		max-width: 30%;
-	}
-	.megusta {
-		display: none;
-		position: absolute;
-		top:80%;
-		left:9%;
-		max-width: 30%;
-	}
-	.poker {
-		display: none;
-		position: absolute;
-		top:80%;
-		left:65%;
-		max-width: 30%;
-	}
-}
