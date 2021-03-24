@@ -22,7 +22,7 @@ let checkWinBot = '';
 let numb = '';
 let kak = '';
 let audio = '';
-localStorage.setItem('f', 3);
+
 localStorage.f++;
 
 // НАПИСАТЬ КОД ДЛЯ ПОДВСЕТКИ ВЫИГРЫШНОЙ КОМБИНАЦИИ
