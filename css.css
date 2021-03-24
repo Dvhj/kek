@@ -297,22 +297,22 @@ body{
 		display: none;
 		position: absolute;
 		top:73%;
-		left:5%;
-		max-width: 30%;
+		left:65%;
+		max-width: 25%;
 	}
 	.megusta {
 		display: none;
 		position: absolute;
-		top:73%;
-		left:9%;
-		max-width: 30%;
+		top:80%;
+		left:55%;
+		max-width: 25%;
 	}
 	.poker {
 		display: none;
 		position: absolute;
-		top:73%;
+		top:80%;
 		left:65%;
-		max-width: 30%;
+		max-width: 25%;
 	}
 }
 
