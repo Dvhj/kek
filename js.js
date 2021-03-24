@@ -21,9 +21,7 @@ let check = '';
 let checkWinBot = '';
 let numb = '';
 let kak = '';
-let audio = '';
 
-localStorage.f++;
 
 // НАПИСАТЬ КОД ДЛЯ ПОДВСЕТКИ ВЫИГРЫШНОЙ КОМБИНАЦИИ
 
