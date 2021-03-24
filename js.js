@@ -10,6 +10,7 @@ let box = document.querySelector('.box');
 let alone = document.querySelector('.forever_alone');
 let megusta = document.querySelector('.megusta');
 let poker = document.querySelector('.poker');
+let timerBox = document.querySelector('.timerBox');
 let x = 0;
 let base = ['a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a'];
 let number = 1;
@@ -21,6 +22,21 @@ let check = '';
 let checkWinBot = '';
 let numb = '';
 let kak = '';
+let audio = '';
+let uf1  = '';
+let uf2  = '';
+let uf3  = '';
+let uf4  = '';
+let z = 0;
+let x1 = 0;
+let timer1 = '';
+
+let record = document.querySelector('.record');
+let clean = document.querySelector('.clean');
+let a = localStorage.getItem('all');
+let b = localStorage.getItem('winPeople');
+let c = localStorage.getItem('winBot');
+let d = localStorage.getItem('draw');
 
 
 // НАПИСАТЬ КОД ДЛЯ ПОДВСЕТКИ ВЫИГРЫШНОЙ КОМБИНАЦИИ
@@ -114,21 +130,27 @@ newGame.addEventListener('click', function(){
 
 duo.addEventListener('click', function(){
   click();
-  area.innerHTML = "Выберите поле и сделайте ход (Ход буквы К)"
+  area.innerHTML = "Выберите поле и сделайте ход <br> <br> (Ход буквы К)"
+  newGame.style.display = 'block';
   duo.style.display = 'none';
   bot.style.display = 'none';
   megusta.style.display = 'block';
   poker.style.display = 'block';
   duoGame();
+  timerBox.style.display = 'block';
+  timer1 = setInterval(timerF, 1000);
 });
 
 bot.addEventListener('click', function(){
   click();
-  area.innerHTML = "Выберите поле и сделайте ход "
+  area.innerHTML = "Выберите поле и сделайте ход ";
+  newGame.style.display = 'block';
   duo.style.display = 'none';
   bot.style.display = 'none';
   alone.style.display = 'block';
   botGame();
+  timerBox.style.display = 'block';
+  timer1 = setInterval(timerF, 1000);
 });
 
 
@@ -276,8 +298,10 @@ function kAk (){
 
 function main() {
       if (fact == true) {
+        clearInterval(uf4);
         console.log(base);
-        area.innerHTML = "Ход компьютера... ";
+        uf3 = setInterval(three, 300 , 'Ход компьютера', '');
+        // area.innerHTML = "Ход компьютера... ";
         setTimeout( point, (random()+5)*100);
         let a = document.createElement('div');
         a.style.width = '100%';
@@ -290,20 +314,23 @@ function main() {
           console.log(kak);
           let x = random();
           console.log(x);
-          if (data.includes('a01') && data.includes('a10')){
-            numb = data.indexOf('a10');
-            console.log(numb);   
-             defEFirst();
+         if (data.includes('01a')){
+            numb = data.indexOf('01a');
+            console.log(numb);
+            defETwo();
               dataF();
             if (data.includes('010') &&  data.includes('101')) {
-              blocks[checkWinBot].style.backgroundColor="#FFFF00";
-              area.innerHTML= "Ничья";
-              die()
+                  blocks[checkWinBot].style.backgroundColor="#FFFF00";
+                  area.innerHTML= "Ничья";
+                  draw();
+                  die()
             } else if (data.includes('010')){
-                blocks[checkWinBot].style.backgroundColor="#FFFF00";
-                area.innerHTML= "Победа Компьютера";
-                die()}
-          } else if (data.includes('10a') && data.includes('01a')){
+                  blocks[checkWinBot].style.backgroundColor="#FFFF00";
+                  area.innerHTML= "Победа Компьютера";
+                  winBot();
+                  die()
+                }
+          }  else if (data.includes('10a') && data.includes('01a')){
             numb = data.indexOf('01a');
             console.log(numb);
              defETwo(); 
@@ -311,16 +338,20 @@ function main() {
             if (data.includes('010') &&  data.includes('101')) {
                 blocks[checkWinBot].style.backgroundColor="#FFFF00";
                 area.innerHTML= "Ничья";
+                draw();
                 die()
             } else if (data.includes('010')){
                 blocks[checkWinBot].style.backgroundColor="#FFFF00";
                 area.innerHTML= "Победа Компьютера";
+                winBot();
                 die()}          
           } else if (data.includes('a01')){
+             clearInterval(uf3);
             numb = data.indexOf('a01')
             console.log(numb);
             defEFirst();
-            area.innerHTML= "Ваш ход..."
+            uf4 = setInterval(three, 300 , 'Ваш ход', '' );
+            // area.innerHTML= "Ваш ход..."
           } else if (data.includes('a10')){
             numb = data.indexOf('a10');
             console.log(numb);
@@ -329,50 +360,60 @@ function main() {
             if (data.includes('010') &&  data.includes('101')) {
                   blocks[checkWinBot].style.backgroundColor="#FFFF00";
                   area.innerHTML= "Ничья";
+                  draw();
                   die()
             } else if (data.includes('010')){
                   blocks[checkWinBot].style.backgroundColor="#FFFF00";
                   area.innerHTML= "Победа Компьютера";
+                  winBot();
                   die() }
           } else if (data.includes('10a')){
+             clearInterval(uf3);
             numb = data.indexOf('10a')
             console.log(numb);
             defETwo();
-            area.innerHTML= "Ваш ход..."
-          } else if (data.includes('01a')){
-            numb = data.indexOf('01a');
-            console.log(numb);
-            defETwo();
+            uf4 = setInterval(three, 300 , 'Ваш ход', '' );
+            // area.innerHTML= "Ваш ход..."
+          } else if (data.includes('a01') && data.includes('a10')){
+            numb = data.indexOf('a10');
+            console.log(numb);   
+             defEFirst();
               dataF();
             if (data.includes('010') &&  data.includes('101')) {
-                  blocks[checkWinBot].style.backgroundColor="#FFFF00";
-                  area.innerHTML= "Ничья";
-                  die()
+              blocks[checkWinBot].style.backgroundColor="#FFFF00";
+              area.innerHTML= "Ничья";
+              draw();
+              die()
             } else if (data.includes('010')){
-                  blocks[checkWinBot].style.backgroundColor="#FFFF00";
-                  area.innerHTML= "Победа Компьютера";
-                  die()
-                }
-          }  else if (base[x] == '1' || base[x] == '0' || x == kak){
+                blocks[checkWinBot].style.backgroundColor="#FFFF00";
+                area.innerHTML= "Победа Компьютера";
+                winBot();
+                die()}
+          } else if (base[x] == '1' || base[x] == '0' || x == kak){
               point();
           } else {
+            clearInterval(uf3);
             blocks[x].style.backgroundColor="#87CEFA";
             blocks[x].innerHTML = 'E';
             base[x] = '0';
-            area.innerHTML = "Ваш ход... "
+            uf4 = setInterval(three, 300 , 'Ваш ход', '' );
+            // area.innerHTML = "Ваш ход... "
             dataF();
               console.log(data);
               if (data.includes('010') &&  data.includes('101')) {
                     blocks[x].style.backgroundColor="#FFFF00";
                     area.innerHTML= "Ничья";
+                    draw();
                     die()
                } else if (data.includes('010')){
                     blocks[x].style.backgroundColor="#FFFF00";
                     area.innerHTML= "Победа Компьютера";
+                    winBot();
                     die()
                } else if ( data.includes('101')){
                     blocks[x].style.backgroundColor="#FFFF00";
                     area.innerHTML= "Победа КЕКаря";
+                    winPeople();
                     die()
           }; 
        };
@@ -386,9 +427,9 @@ function main() {
 function botGame() {
     blocks.forEach (function (item){
       item.addEventListener('click', function () {
-		click();
+		          click();
             if (base[item.id - 1] == '0' || base[item.id - 1] == '1'){
-		error();
+		          error();
               area.innerHTML= 'Выберите свободное поле'
               area.style.color = 'red';
             }
@@ -403,16 +444,19 @@ function botGame() {
                     fact = false;
                     item.style.backgroundColor="#FFFF00";
                     area.innerHTML= "Ничья";
+                    draw();
                     die()
                } else if (data.includes('010')){
                     fact = false;
                     item.style.backgroundColor="#FFFF00";
                     area.innerHTML= "Победа Компьютера";
+                    winBot();
                     die()
                } else if ( data.includes('101')){
                     fact = false;
                     item.style.backgroundColor="#FFFF00";
                     area.innerHTML= "Победа КЕКаря";
+                    winPeople();
                     die()
                   }; 
                 main();
@@ -424,11 +468,12 @@ function botGame() {
 function duoGame() {
     blocks.forEach(function(item){
           item.addEventListener('click', function () {
-		click();
+		            click();
                 x++;  
                 if (x % 2 == 1){
+                  clearInterval(uf1);
                   if (base[item.id - 1] == '0' || base[item.id - 1] == '1'){
-			error();
+			                   error();
                         area.innerHTML= 'Выберите свободное поле'
                         area.style.color = 'red';
                         x = 0;
@@ -437,11 +482,12 @@ function duoGame() {
                         base[item.id-1] = '1';
                         item.innerHTML = 'K';
                         item.style.backgroundColor="#FA8072";
-			area.innerHTML= "Ход второго игрока... (Ход буквы Е)";
+			                  // area.innerHTML= "Ход второго игрока... <br> (Ход буквы Е)";
+                        uf2 = setInterval(three, 300, 'Ход второго игрока', '<br> <br> (Ход буквы Е)');
                         dataF(); 
                          if (data.includes('010') &&  data.includes('101')) {
                               item.style.backgroundColor="#FFFF00";
-                              area.innerHTML= "Ничья Игра завершена.";
+                              area.innerHTML= "Ничья <br> Игра завершена.";
                               die()
                          } else if (data.includes('010')){
                               item.style.backgroundColor="#FFFF00";
@@ -452,9 +498,11 @@ function duoGame() {
                               area.innerHTML= "Победа КЕК! Поздравляем! Игра завершена.";
                               die()
                               }
-                }} else if( x % 2 == 0){
+                        }
+                      } else if( x % 2 == 0){
+                        clearInterval(uf2);
                         if (base[item.id - 1] == '0' || base[item.id - 1] == '1'){
-			error();
+			               error();
                         area.innerHTML= 'Выберите свободное поле'
                         area.style.color = 'red';
                         x = 1;
@@ -463,11 +511,12 @@ function duoGame() {
                         base[item.id-1] = '0';
                         item.innerHTML = 'E';
                         item.style.backgroundColor="#87CEFA"
-                        area.innerHTML= "Ход первого игрока... (Ход буквы К)"
+                        // area.innerHTML= "Ход первого игрока... <br> (Ход буквы К)"
+                        uf1 = setInterval(three, 300 , 'Ход первого игрока' , '<br> <br> (Ход буквы К)');
                         dataF(); 
                          if (data.includes('010') &&  data.includes('101')) {
                               item.style.backgroundColor="#FFFF00";
-                              area.innerHTML= "Ничья Игра завершена.";
+                              area.innerHTML= "Ничья <br> Игра завершена.";
                               die()
                          } else if (data.includes('010')){
                               item.style.backgroundColor="#FFFF00";
@@ -478,17 +527,163 @@ function duoGame() {
                               area.innerHTML= "Победа КЕК! Поздравляем! Игра завершена.";
                               die()
                             }; 
-                        }}
+                        }
+                      }
+                full();
 
           });
       });
   }
 
 function die(){
+  clearInterval(uf1);
+  clearInterval(uf2);
+  clearInterval(uf3);
+  clearInterval(uf4);
+  clearInterval(timer1);
   let a = document.createElement('div');
   a.style.width = '100%';
   a.style.height = '100%';
   a.style.opacity = '0';
   a.style.position = 'absolute';
   document.querySelector('.box').appendChild(a);
+  info();
+}
+
+function full(){
+  let t = base.includes('a');
+  if ( t == false) {
+    area.innerHTML= "Ничья <br>  Игра завершена.";
+     die()
+  }
+}
+
+let u = 0;
+function three(one, two){
+  u++
+  if (u ==1 ){
+  area.innerHTML = one + ".&nbsp;&nbsp;" + two}
+  else if ( u ==2 ){
+  area.innerHTML = one + "..&nbsp;" + two}
+  else if (u == 3) {
+  area.innerHTML = one + "..." + two}
+  else if (u ==4) {
+  u = 0 }
+}
+
+
+function timerF(){
+  timerBox.innerHTML = '1';
+
+  if (x1 == 60 && z>= 9 ){
+    x1 = 0;
+    z++
+    timerBox.innerHTML = 'Время игры: ' + z +":" +  '0'+ x1++;
+  } else if (x1 == 60 && z<10){
+    x1 = 0;
+    z++
+    timerBox.innerHTML = 'Время игры: ' + '0' + z +":" +  '0'+ x1++;
+  } else if (x1 >= 10 && z >=10 ){
+    timerBox.innerHTML = 'Время игры: ' +  z +":" + x1++;
+  } else if (x1 >= 10){
+    timerBox.innerHTML = 'Время игры: ' + '0'+ z +":" + x1++;
+  } else if (z >= 10 ){
+    timerBox.innerHTML = 'Время игры: '+ z +":" +  '0'+ x1++;
+  } else {
+    timerBox.innerHTML = 'Время игры: ' + '0'+ z +":" +  '0'+ x1++;
+  }
+}
+
+
+
+document.querySelector('.statInfo').innerHTML = 'Всего игр: '+ a + ' <br> <br> Ваши победы: ' + b + '<br><br> Победы Компьютера: ' + c + '<br> <br> Ничьи: ' +d+ '<br><br>';
+if (a == null && b == null && c == null && d == null) {
+  document.querySelector('.statInfo').innerHTML = 'Всего игр: __ <br> <br> Ваши победы: __<br><br> Победы Компьютера: __<br> <br> Ничьи: __<br><br>';
+}
+
+if (localStorage.getItem('check') == 1){
+  white ('.record ');
+  black ('.clean');
+} else {
+  white ('.clean');
+  black ('.record ');
+}
+
+record.addEventListener('click', function() {
+  if (localStorage.getItem('check') == 1){
+    record  = document.querySelector('.t')
+    white ('.record ');
+    black ('.clean');
+  } else {
+    click();
+    white ('.record ');
+    black ('.clean');
+    localStorage.setItem('check', 1);
+    if (localStorage.getItem('check') == 1) {
+      localStorage.setItem('all', 0);
+      localStorage.setItem('winPeople', 0);
+      localStorage.setItem('winBot', 0);
+      localStorage.setItem('draw', 0);
+      let a = localStorage.getItem('all');
+      let b = localStorage.getItem('winPeople');
+      let c = localStorage.getItem('winBot');
+      let d = localStorage.getItem('draw');
+      document.querySelector('.statInfo').innerHTML = 'Всего игр: '+ a + ' <br> <br> Ваши победы: ' + b + '<br><br> Победы Компьютера: ' + c + '<br> <br> Ничьи: ' +d+ '<br><br>';
+    }
+  }
+})
+
+clean.addEventListener('click', function() {
+  click();
+  white('.clean');
+  console.log(record )
+  localStorage.check = 0;
+  localStorage.removeItem('all');
+  localStorage.removeItem('winPeople');
+  localStorage.removeItem('winBot');
+  localStorage.removeItem('draw');
+  black('.record');
+  document.querySelector('.statInfo').innerHTML = 'Всего игр: __ <br> <br> Ваши победы: __<br><br> Победы Компьютера: __<br> <br> Ничьи: __<br><br>';
+})
+
+ function info() {
+  if (localStorage.getItem('check') == 1){
+    record  = document.querySelector('.t')
+    white ('.record ');
+    localStorage.all++;
+  let a = localStorage.getItem('all');
+    let b = localStorage.getItem('winPeople');
+    let c = localStorage.getItem('winBot');
+    let d = localStorage.getItem('draw');
+  document.querySelector('.statInfo').innerHTML = 'Всего игр: '+ a + ' <br> <br> Ваши победы: ' + b + '<br><br> Победы Компьютера: ' + c + '<br> <br> Ничьи: ' +d+ '<br><br>';
+  } 
+  // else if (localStorage.getItem('check') == 0){
+  //   f1 = document.querySelector('.t')
+  // }
+}
+function draw() {
+  localStorage.draw++;
+  // let d = localStorage.getItem('draw');
+  // document.querySelector('.statInfo').innerHTML = 'Всего игр: '+ a + ' <br> <br> Ваши победы: ' + b + '<br><br> Победы Компьютера: ' + c + '<br> <br> Ничьи: ' +d+ '<br><br>';
+}
+function winPeople() {
+  localStorage.winPeople++;
+  // let b = localStorage.getItem('winPeople');
+  // document.querySelector('.statInfo').innerHTML = 'Всего игр: '+ a + ' <br> <br> Ваши победы: ' + b + '<br><br> Победы Компьютера: ' + c + '<br> <br> Ничьи: ' +d+ '<br><br>';
+}
+function winBot() {
+  localStorage.winBot++;
+  // let c = localStorage.getItem('winBot');
+  // document.querySelector('.statInfo').innerHTML = 'Всего игр: '+ a + ' <br> <br> Ваши победы: ' + b + '<br><br> Победы Компьютера: ' + c + '<br> <br> Ничьи: ' +d+ '<br><br>';
+}
+
+function black(abc) {
+  document.querySelector(abc).style.boxShadow = '0 5px 10px gray ';
+  document.querySelector(abc).style.color = 'black';
+  document.querySelector(abc).style.cursor = 'pointer';
+}
+function white(abc) {
+  document.querySelector( abc).style.boxShadow = '0 0 0 ';
+  document.querySelector(abc).style.color = '#A9A9A9';
+  document.querySelector(abc).style.cursor = 'default';
 }
