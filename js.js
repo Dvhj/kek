@@ -322,11 +322,13 @@ function main() {
             if (data.includes('010') &&  data.includes('101')) {
                   blocks[checkWinBot].style.backgroundColor="#FFFF00";
                   area.innerHTML= "Ничья";
+		  info();
                   draw();
                   die()
             } else if (data.includes('010')){
                   blocks[checkWinBot].style.backgroundColor="#FFFF00";
                   area.innerHTML= "Победа Компьютера";
+		  info();
                   winBot();
                   die()
                 }
@@ -338,11 +340,13 @@ function main() {
             if (data.includes('010') &&  data.includes('101')) {
                 blocks[checkWinBot].style.backgroundColor="#FFFF00";
                 area.innerHTML= "Ничья";
+		info();
                 draw();
                 die()
             } else if (data.includes('010')){
                 blocks[checkWinBot].style.backgroundColor="#FFFF00";
                 area.innerHTML= "Победа Компьютера";
+		info();
                 winBot();
                 die()}          
           } else if (data.includes('a01')){
@@ -360,11 +364,13 @@ function main() {
             if (data.includes('010') &&  data.includes('101')) {
                   blocks[checkWinBot].style.backgroundColor="#FFFF00";
                   area.innerHTML= "Ничья";
+		   info();
                   draw();
                   die()
             } else if (data.includes('010')){
                   blocks[checkWinBot].style.backgroundColor="#FFFF00";
                   area.innerHTML= "Победа Компьютера";
+		   info();
                   winBot();
                   die() }
           } else if (data.includes('10a')){
@@ -382,11 +388,13 @@ function main() {
             if (data.includes('010') &&  data.includes('101')) {
               blocks[checkWinBot].style.backgroundColor="#FFFF00";
               area.innerHTML= "Ничья";
+		info();
               draw();
               die()
             } else if (data.includes('010')){
                 blocks[checkWinBot].style.backgroundColor="#FFFF00";
                 area.innerHTML= "Победа Компьютера";
+		 info();
                 winBot();
                 die()}
           } else if (base[x] == '1' || base[x] == '0' || x == kak){
@@ -403,16 +411,19 @@ function main() {
               if (data.includes('010') &&  data.includes('101')) {
                     blocks[x].style.backgroundColor="#FFFF00";
                     area.innerHTML= "Ничья";
+		    info();
                     draw();
                     die()
                } else if (data.includes('010')){
                     blocks[x].style.backgroundColor="#FFFF00";
                     area.innerHTML= "Победа Компьютера";
+		    info();
                     winBot();
                     die()
                } else if ( data.includes('101')){
                     blocks[x].style.backgroundColor="#FFFF00";
                     area.innerHTML= "Победа КЕКаря";
+		    info();
                     winPeople();
                     die()
           }; 
@@ -444,18 +455,21 @@ function botGame() {
                     fact = false;
                     item.style.backgroundColor="#FFFF00";
                     area.innerHTML= "Ничья";
+		     info();
                     draw();
                     die()
                } else if (data.includes('010')){
                     fact = false;
                     item.style.backgroundColor="#FFFF00";
                     area.innerHTML= "Победа Компьютера";
+		    info();
                     winBot();
                     die()
                } else if ( data.includes('101')){
                     fact = false;
                     item.style.backgroundColor="#FFFF00";
                     area.innerHTML= "Победа КЕКаря";
+		     info();
                     winPeople();
                     die()
                   }; 
@@ -547,7 +561,6 @@ function die(){
   a.style.opacity = '0';
   a.style.position = 'absolute';
   document.querySelector('.box').appendChild(a);
-  info();
 }
 
 function full(){
