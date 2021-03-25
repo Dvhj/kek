@@ -208,7 +208,7 @@ body{
 	.block{
 	min-width: 100px;
 	min-height: 100px;
-	font-size: 90px;
+	font-size: 70px;
 	}
 }
 
@@ -235,7 +235,7 @@ body{
 	max-width: 300px;
 	}
 	.block{
-	font-size: 40px;
+	font-size: 35px;
 	min-width: 50px;
 	min-height: 50px;
 	}
