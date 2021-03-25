@@ -247,6 +247,7 @@ body{
 	}
 	.statCont{
 		max-width: 98%;
+                margin: 0 1%;
 	}
 	.block{
 		border:1px solid black;
