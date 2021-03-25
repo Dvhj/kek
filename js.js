@@ -322,14 +322,14 @@ function main() {
             if (data.includes('010') &&  data.includes('101')) {
                   blocks[checkWinBot].style.backgroundColor="#FFFF00";
                   area.innerHTML= "Ничья";
+		  draw();
 		  info();
-                  draw();
                   die()
             } else if (data.includes('010')){
                   blocks[checkWinBot].style.backgroundColor="#FFFF00";
                   area.innerHTML= "Победа Компьютера";
+		   winBot();
 		  info();
-                  winBot();
                   die()
                 }
           }  else if (data.includes('10a') && data.includes('01a')){
@@ -340,14 +340,14 @@ function main() {
             if (data.includes('010') &&  data.includes('101')) {
                 blocks[checkWinBot].style.backgroundColor="#FFFF00";
                 area.innerHTML= "Ничья";
+		draw();   
 		info();
-                draw();
                 die()
             } else if (data.includes('010')){
                 blocks[checkWinBot].style.backgroundColor="#FFFF00";
                 area.innerHTML= "Победа Компьютера";
+		winBot();
 		info();
-                winBot();
                 die()}          
           } else if (data.includes('a01')){
              clearInterval(uf3);
@@ -364,14 +364,14 @@ function main() {
             if (data.includes('010') &&  data.includes('101')) {
                   blocks[checkWinBot].style.backgroundColor="#FFFF00";
                   area.innerHTML= "Ничья";
+		   draw();
 		   info();
-                  draw();
                   die()
             } else if (data.includes('010')){
                   blocks[checkWinBot].style.backgroundColor="#FFFF00";
                   area.innerHTML= "Победа Компьютера";
-		   info();
                   winBot();
+		   info();
                   die() }
           } else if (data.includes('10a')){
              clearInterval(uf3);
@@ -388,14 +388,14 @@ function main() {
             if (data.includes('010') &&  data.includes('101')) {
               blocks[checkWinBot].style.backgroundColor="#FFFF00";
               area.innerHTML= "Ничья";
+		draw();
 		info();
-              draw();
               die()
             } else if (data.includes('010')){
                 blocks[checkWinBot].style.backgroundColor="#FFFF00";
                 area.innerHTML= "Победа Компьютера";
-		 info();
                 winBot();
+		 info();
                 die()}
           } else if (base[x] == '1' || base[x] == '0' || x == kak){
               point();
@@ -411,20 +411,20 @@ function main() {
               if (data.includes('010') &&  data.includes('101')) {
                     blocks[x].style.backgroundColor="#FFFF00";
                     area.innerHTML= "Ничья";
-		    info();
                     draw();
+		    info();
                     die()
                } else if (data.includes('010')){
                     blocks[x].style.backgroundColor="#FFFF00";
                     area.innerHTML= "Победа Компьютера";
-		    info();
                     winBot();
+		    info();  
                     die()
                } else if ( data.includes('101')){
                     blocks[x].style.backgroundColor="#FFFF00";
                     area.innerHTML= "Победа КЕКаря";
-		    info();
                     winPeople();
+		    info();
                     die()
           }; 
        };
@@ -455,22 +455,22 @@ function botGame() {
                     fact = false;
                     item.style.backgroundColor="#FFFF00";
                     area.innerHTML= "Ничья";
-		     info();
                     draw();
+		    info();
                     die()
                } else if (data.includes('010')){
                     fact = false;
                     item.style.backgroundColor="#FFFF00";
                     area.innerHTML= "Победа Компьютера";
-		    info();
-                    winBot();
+		      winBot();
+		    info();    
                     die()
                } else if ( data.includes('101')){
                     fact = false;
                     item.style.backgroundColor="#FFFF00";
                     area.innerHTML= "Победа КЕКаря";
-		     info();
                     winPeople();
+		    info();
                     die()
                   }; 
                 main();
@@ -610,7 +610,7 @@ function timerF(){
 
 
 document.querySelector('.statInfo').innerHTML = 'Всего игр: '+ a + ' <br> <br> Ваши победы: ' + b + '<br><br> Победы Компьютера: ' + c + '<br> <br> Ничьи: ' +d+ '<br><br>';
-if (a == null && b == null && c == null && d == null) {
+if (a == null || b == null || c == null || d == null) {
   document.querySelector('.statInfo').innerHTML = 'Всего игр: __ <br> <br> Ваши победы: __<br><br> Победы Компьютера: __<br> <br> Ничьи: __<br><br>';
 }
 
