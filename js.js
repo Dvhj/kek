@@ -610,7 +610,7 @@ function timerF(){
 
 
 document.querySelector('.statInfo').innerHTML = 'Всего игр: '+ a + ' <br> <br> Ваши победы: ' + b + '<br><br> Победы Компьютера: ' + c + '<br> <br> Ничьи: ' +d+ '<br><br>';
-if (a == null || b == null || c == null || d == null) {
+if (a === null || b === null || c === null || d === null) {
   document.querySelector('.statInfo').innerHTML = 'Всего игр: __ <br> <br> Ваши победы: __<br><br> Победы Компьютера: __<br> <br> Ничьи: __<br><br>';
 }
 
