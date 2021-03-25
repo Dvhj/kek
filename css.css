@@ -288,7 +288,9 @@ body{
 	}
 	.boxHelp{
 		width:99%;
-		font-size: 25px;}
+		font-size: 25px;
+		left: 0;
+	}
 	.shadow {
 		font-size: 14px;
 	}
