@@ -270,6 +270,7 @@ body{
 		min-width: 97%;
 		max-width: 98%;
 		font-size: 15px;
+                min-height: 1px;
 	}
 	.contain {
 		min-height: 70%;
