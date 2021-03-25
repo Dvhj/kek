@@ -40,7 +40,11 @@ let d = localStorage.getItem('draw');
 
 
 // НАПИСАТЬ КОД ДЛЯ ПОДВСЕТКИ ВЫИГРЫШНОЙ КОМБИНАЦИИ
-
+(function () {
+if (a == null|| b == null || c == null|| d == null) {
+  document.querySelector('.statInfo').innerHTML = 'Всего игр: __ <br> <br> Ваши победы: __<br><br> Победы Компьютера: __<br> <br> Ничьи: __<br><br>';}
+else {document.querySelector('.statInfo').innerHTML = 'Всего игр: '+ a + ' <br> <br> Ваши победы: ' + b + '<br><br> Победы Компьютера: ' + c + '<br> <br> Ничьи: ' +d+ '<br><br>';}
+})();
 
 function dataF () {
   data[0] = base[0]+base[1]+base[2];
@@ -607,12 +611,6 @@ function timerF(){
   }
 }
 
-
-
-document.querySelector('.statInfo').innerHTML = 'Всего игр: '+ a + ' <br> <br> Ваши победы: ' + b + '<br><br> Победы Компьютера: ' + c + '<br> <br> Ничьи: ' +d+ '<br><br>';
-if (a == NaN || b == NaN || c == NaN || d == NaN) {
-  document.querySelector('.statInfo').innerHTML = 'Всего игр: __ <br> <br> Ваши победы: __<br><br> Победы Компьютера: __<br> <br> Ничьи: __<br><br>';
-}
 
 if (localStorage.getItem('check') == 1){
   white ('.record ');
