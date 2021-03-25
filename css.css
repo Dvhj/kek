@@ -269,7 +269,7 @@ body{
 	.timerBox{
 		min-width: 97%;
 		max-width: 98%;
-		font-size: 30px;
+		font-size: 20px;
 	}
 	.contain {
 		min-height: 70%;
@@ -297,21 +297,21 @@ body{
 	.forever_alone{
 		display: none;
 		position: absolute;
-		top:73%;
+		top:82%;
 		left:65%;
 		max-width: 25%;
 	}
 	.megusta {
 		display: none;
 		position: absolute;
-		top:80%;
+		top:85%;
 		left:55%;
 		max-width: 25%;
 	}
 	.poker {
 		display: none;
 		position: absolute;
-		top:80%;
+		top:85%;
 		left:65%;
 		max-width: 25%;
 	}
