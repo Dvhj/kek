@@ -4,6 +4,7 @@ body{
 	display: flex;
 	flex-direction: row;
 	background: url(grey-wood-pane.png);
+	font-family: "Trebuchet MS", serif;
 }
 .container{
 	margin: 0 2%;
@@ -53,20 +54,19 @@ body{
 	justify-content: center;
 	flex-wrap: wrap;
 	max-width: 810px;
-	border:1px solid #5b5643;
-	border-radius: 4px;
-	background-color: #fff;
+	border-radius: 3%;
 	position: relative;
 }
 
 .block{
 	border:1px solid #5b5643;
+	box-shadow: 0 5px 10px #5b5643;
 	min-width: 160px;
 	min-height: 160px;
 	font-size: 100px;
 	text-align: center;
-	border-radius: 4px;
-	color: #443020;
+	border-radius: 15%;
+	color: #444444;
 	background-color: #fff;
 }
 
@@ -144,7 +144,7 @@ body{
 	display: none;
 	position: absolute;
 	top:40%;
-	left:5%;
+	left:1%;
 	max-width: 15%;
 }
 .poker {
@@ -212,7 +212,7 @@ body{
 	}
 }
 
-@media screen and (max-width: 1330px) {
+@media screen and (max-width: 1350px) {
 	.box {
 	max-width: 360px;
 	}
@@ -233,6 +233,7 @@ body{
 	}
 	.box {
 	max-width: 300px;
+	max-height: 300px;
 	}
 	.block{
 	font-size: 35px;
@@ -281,6 +282,8 @@ body{
 	.box {
 		width: 98%;
 		min-height: 90%;
+		max-height: 100%;
+		margin-bottom: 1%;
 	}
 	.text{
 		display: flex;
