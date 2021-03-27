@@ -427,45 +427,29 @@ function main() {
             console.log(numb,427);
             defETwo();
             dataF();
-            if (data.includes('010') &&  data.includes('101')) {
-                  numb = data.indexOf('010');
-                  light();
-                  numb = data.indexOf('101');
-                  light();
-                  area.innerHTML= "Ничья";
-            		  draw();
-            		  info();
-                  die()
-            } else if (data.includes('010')){
-                  numb = data.indexOf('010');
-                  light();
-                  area.innerHTML= "Победа Компьютера";
-              		winBot();
-              		info();
-                  die()
-                }
+            // if (data.includes('010') &&  data.includes('101')) {
+            //       numb = data.indexOf('010');
+            //       light();
+            //       numb = data.indexOf('101');
+            //       light();
+            //       area.innerHTML= "Ничья";
+            // 		  draw();
+            // 		  info();
+            //       die()
+            // } else if (data.includes('010')){
+            //       numb = data.indexOf('010');
+            //       light();
+            //       area.innerHTML= "Победа Компьютера";
+            //   		winBot();
+            //   		info();
+            //       die()
+            //     }
           } else if (data.includes('01o')){
                 numb = data.indexOf('01o');
                 console.log(numb,429);
                 defETwo();
-            dataF();
-            if (data.includes('010') &&  data.includes('101')) {
-                  numb = data.indexOf('010');
-                  light();
-                  numb = data.indexOf('101');
-                  light();
-                  area.innerHTML= "Ничья";
-                  draw();
-                  info();
-                  die()
-            } else if (data.includes('010')){
-                  numb = data.indexOf('010');
-                  light();
-                  area.innerHTML= "Победа Компьютера";
-                  winBot();
-                  info();
-                  die()
-                }
+                 dataF();
+            // -----------------------------
           }  else if ((data.includes('10a')|| data.includes('10o')) && (data.includes('01a')|| data.includes('01o'))){
             numb = data.indexOf('01o');
             console.log(numb, 451);
@@ -473,22 +457,7 @@ function main() {
             console.log(numb, 453);
              defETwo();
               dataF();
-            if (data.includes('010') &&  data.includes('101')) {
-                numb = data.indexOf('010');
-                light();
-                numb = data.indexOf('101');
-                light();
-                area.innerHTML= "Ничья";
-            		draw();   
-            		info();
-                die();
-            } else if (data.includes('010')){
-                numb = data.indexOf('010');
-                light();
-                area.innerHTML= "Победа Компьютера";
-            		winBot();
-            		info();
-                die()}          
+            // ----------------------------         
           } else if (data.includes('a01')){
              clearInterval(uf3);
             numb = data.indexOf('a01')
@@ -505,45 +474,13 @@ function main() {
             console.log(numb, 482);
              defEFirst();
               dataF();
-            if (data.includes('010') &&  data.includes('101')) {
-                  numb = data.indexOf('010');
-                  light();                
-                  numb = data.indexOf('101');
-                  light()
-                  area.innerHTML= "Ничья";
-            		  draw();
-            		  info();
-                  die()
-            } else if (data.includes('010')){
-                  numb = data.indexOf('010');
-                  light();
-                  area.innerHTML= "Победа Компьютера";
-                  winBot();
-		              info();
-                  die() }
+            // ------------------------------
           }else if (data.includes('o10')){
             numb = data.indexOf('o10');
             console.log(numb, 484);
              defEFirst();
               dataF();
-            if (data.includes('010') &&  data.includes('101')) {
-                  numb = data.indexOf('010');
-                  light();                
-                  numb = data.indexOf('101');
-                  light()
-                  area.innerHTML= "Ничья";
-                  draw();
-                  info();
-                  die()
-            } else if (data.includes('010')){
-                  numb = data.indexOf('010');
-                  light();
-                  area.innerHTML= "Победа Компьютера";
-                  winBot();
-                  info();
-                  die() }
-
-
+            // --------------------------------
           } else if (data.includes('10a')){
              clearInterval(uf3);
             numb = data.indexOf('10a')
@@ -560,26 +497,11 @@ function main() {
           } else if ((data.includes('a01') ||data.includes('o01')) && (data.includes('o10') ||data.includes('a10'))){
             numb = data.indexOf('a10');
             console.log(numb, 514);   
-             defEFirst();
              numb = data.indexOf('o10');
-            console.log(numb, 517);   
+            console.log(numb, 517); 
+              defEFirst();  
               dataF();
-            if (data.includes('010') &&  data.includes('101')) {
-                numb = data.indexOf('010');
-                light();
-                numb = data.indexOf('101');
-                light();
-              area.innerHTML= "Ничья";
-            		draw();
-            		info();
-               die()
-            } else if (data.includes('010')){
-                  numb = data.indexOf('010');
-                  light();
-                area.innerHTML= "Победа Компьютера";
-                winBot();
-		            info();
-                die()}
+            // --------------------------------
           } else if (base[x] == 'o') {
             if ( func1()== true) {
               point();
