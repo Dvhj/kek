@@ -11,6 +11,7 @@ let alone = document.querySelector('.forever_alone');
 let megusta = document.querySelector('.megusta');
 let poker = document.querySelector('.poker');
 let timerBox = document.querySelector('.timerBox');
+let night = document.querySelector('.night');
 let x = 0;
 let base = ['a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a'];
 let number = 1;
@@ -175,6 +176,21 @@ help.addEventListener('click', function(){
   megusta.style.zIndex = '0'
   poker.style.zIndex = '1'
   alone.style.zIndex = '2'
+});
+
+night.addEventListener('click', function night_vision(){
+  click();
+  if (night.textContent == 'Убрать ночной режим') {
+    box.classList.remove('block_night')
+    document.body.style.background = 'url(grey-wood-pane.png)';
+    night.textContent = 'Ночной режим'
+    localStorage.removeItem('night');
+  }
+  else {
+    localStorage.setItem('night', true);
+    box.classList.add('block_night')
+    document.body.style.background = 'url(grey-wood-pane_2.png)';
+    night.textContent = 'Убрать ночной режим'}
 });
 
 butHelp.addEventListener('click', function(){
