@@ -34,6 +34,7 @@ let x1 = 0;
 let timer1 = '';
 let arrayKak = [];
 let arrLight = [];
+let check_new_game = false;
 
 let record = document.querySelector('.record');
 let clean = document.querySelector('.clean');
@@ -219,6 +220,7 @@ newGame.addEventListener('click', function(){
 });
 
 duo.addEventListener('click', function(){
+  check_new_game = true;
   click();
   area.innerHTML = "Выберите поле и сделайте ход <br> <br> (Ход буквы К)"
   newGame.style.display = 'block';
@@ -232,6 +234,7 @@ duo.addEventListener('click', function(){
 });
 
 bot.addEventListener('click', function(){
+  check_new_game = true;	
   click();
   area.innerHTML = "Выберите поле и сделайте ход ";
   newGame.style.display = 'block';
