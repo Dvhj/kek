@@ -1,5 +1,6 @@
 let blocks = document.querySelectorAll('.block');
 let area = document.querySelector('.area');
+let box_area = document.querySelector('.box-area');
 let duo  = document.querySelector('.duo');
 let bot = document.querySelector('.bot');
 let help = document.querySelector('.help');
@@ -172,7 +173,11 @@ help.addEventListener('click', function(){
   boxHelp.style.display='flex'
   boxHelp.style.zIndex = '5'
   newGame.style.display='none'
+  duo.style.display='none'
+  bot.style.display='none'
   box.style.display='none'
+  box_area.style.display='none'
+  night.style.display='none'
   megusta.style.zIndex = '0'
   poker.style.zIndex = '1'
   alone.style.zIndex = '2'
@@ -196,8 +201,16 @@ night.addEventListener('click', function night_vision(){
 butHelp.addEventListener('click', function(){
   click();
   boxHelp.style.display='none'
-  newGame.style.display='flex'
   box.style.display='flex'
+  box_area.style.display='flex'
+  night.style.display='flex'
+  if (check_new_game == true){
+    newGame.style.display='flex'
+    bot.style.display='none'
+    duo.style.display='none'
+  } else {
+    bot.style.display='flex'
+    duo.style.display='flex'}
 });
 
 newGame.addEventListener('click', function(){
