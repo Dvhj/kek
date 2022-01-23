@@ -69,7 +69,9 @@ body{
 	color: #444444;
 	background-color: #fff;
 }
-
+.block_night{
+	filter: brightness(70%);
+}
 .block:hover{
 	cursor: pointer;
 	background-color:#f9f4e6;
