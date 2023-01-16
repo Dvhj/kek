@@ -44,14 +44,15 @@ body{
 	cursor: pointer;
 	font-size: 18px;
 }
-.contain{
+/*.contain{
 	display: flex;
 	justify-content: center;
-	margin-right: 2%;
-}
+}*/
+
 .box {
 	display: flex;
 	justify-content: center;
+	margin-right: 2%;
 	flex-wrap: wrap;
 	max-width: 810px;
 	border-radius: 3%;
