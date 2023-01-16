@@ -1,5 +1,6 @@
 let blocks = document.querySelectorAll('.block');
 let area = document.querySelector('.area');
+let box_area = document.querySelector('.box-area');
 let duo  = document.querySelector('.duo');
 let bot = document.querySelector('.bot');
 let help = document.querySelector('.help');
@@ -11,6 +12,7 @@ let alone = document.querySelector('.forever_alone');
 let megusta = document.querySelector('.megusta');
 let poker = document.querySelector('.poker');
 let timerBox = document.querySelector('.timerBox');
+let night = document.querySelector('.night');
 let x = 0;
 let base = ['a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a','a', 'a', 'a', 'a', 'a'];
 let number = 1;
@@ -32,6 +34,7 @@ let x1 = 0;
 let timer1 = '';
 let arrayKak = [];
 let arrLight = [];
+let check_new_game = false;
 
 let record = document.querySelector('.record');
 let clean = document.querySelector('.clean');
@@ -171,17 +174,44 @@ help.addEventListener('click', function(){
   boxHelp.style.display='flex'
   boxHelp.style.zIndex = '5'
   newGame.style.display='none'
+  duo.style.display='none'
+  bot.style.display='none'
   box.style.display='none'
+  box_area.style.display='none'
+  night.style.display='none'
   megusta.style.zIndex = '0'
   poker.style.zIndex = '1'
   alone.style.zIndex = '2'
 });
 
+night.addEventListener('click', function night_vision(){
+  click();
+  if (night.textContent == 'Убрать ночной режим') {
+    box.classList.remove('block_night')
+    document.body.style.background = 'url(grey-wood-pane.png)';
+    night.textContent = 'Ночной режим'
+    localStorage.removeItem('night');
+  }
+  else {
+    localStorage.setItem('night', true);
+    box.classList.add('block_night')
+    document.body.style.background = 'url(grey-wood-pane_2.png)';
+    night.textContent = 'Убрать ночной режим'}
+});
+
 butHelp.addEventListener('click', function(){
   click();
   boxHelp.style.display='none'
-  newGame.style.display='flex'
   box.style.display='flex'
+  box_area.style.display='flex'
+  night.style.display='flex'
+  if (check_new_game == true){
+    newGame.style.display='flex'
+    bot.style.display='none'
+    duo.style.display='none'
+  } else {
+    bot.style.display='flex'
+    duo.style.display='flex'}
 });
 
 newGame.addEventListener('click', function(){
@@ -190,6 +220,7 @@ newGame.addEventListener('click', function(){
 });
 
 duo.addEventListener('click', function(){
+  check_new_game = true;
   click();
   area.innerHTML = "Выберите поле и сделайте ход <br> <br> (Ход буквы К)"
   newGame.style.display = 'block';
@@ -203,6 +234,7 @@ duo.addEventListener('click', function(){
 });
 
 bot.addEventListener('click', function(){
+  check_new_game = true;	
   click();
   area.innerHTML = "Выберите поле и сделайте ход ";
   newGame.style.display = 'block';

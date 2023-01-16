@@ -18,6 +18,7 @@ body{
 	justify-content: center;
 	margin-bottom: 1%;
 	font-size: 18px;
+	grid-gap:2%;
 }
 .timerBox {
 	display: none;
@@ -38,6 +39,9 @@ body{
 	border-radius: 3px;
 	box-shadow:0 5px 5px gray;
 	cursor: pointer;
+}
+.night{
+	margin-right: 1%;
 }
 .shadow {
 	box-shadow:0 5px 5px gray;
@@ -70,7 +74,9 @@ body{
 	color: #444444;
 	background-color: #fff;
 }
-
+.block_night{
+	filter: brightness(70%);
+}
 .block:hover{
 	cursor: pointer;
 	background-color:#f9f4e6;
